@@ -26,13 +26,14 @@ int main()
 
 int main()
 {
-	int b = 0, c = 0, t;
+	int b = 0, c = 0;
 	int ver(int, int);
 	while (b < 9 && c < 9)
 	{
 		for (int i = 0; i < 10;)
 		{
 			if (ver(b, c) == 1)
+				//这里使用子函数的目的是便于检测是否输出，便于输出的计数
 			{
 				i++; c++;
 				if (c == 10)
