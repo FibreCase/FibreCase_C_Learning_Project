@@ -4,13 +4,45 @@
 
 int main() 
 {
-	int i, j = 1;
-
-	for ( i = 0; i < 9; i++)
+	int b = 0, c = 0,t;
+	int ver(int, int);
+	while (b<9&&c<9)
 	{
-		j = (j + 1) * 2;
+		for (int i = 0; i < 10;)
+		{
+			if (ver(b,c) == 1)
+			{
+				i++; c++;
+				if (c == 10)
+				{
+					b++; c = 0;
+				}
+	
+			}
+			else
+			{
+				c++;
+				if (c == 10)
+				{
+					b++; c = 0;
+				}
+			}
+		}
+		printf("\n");
 	}
-	printf("猴子第一天摘了%d个桃子",j);
-
     return 0;
+}
+
+
+int ver(int b, int c)
+{
+	if ((100+b*10+c)%2==0 && b!=c && b != 1 && c != 1)
+	{
+		printf("%6d", (100 + b * 10 + c));
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
 }
