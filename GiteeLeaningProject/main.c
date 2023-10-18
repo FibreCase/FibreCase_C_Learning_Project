@@ -4,37 +4,13 @@
 
 int main() 
 {
-	int a=1, b=0, c=0;
-	int verf(int, int, int);
+	int i, j = 1;
 
-	while (a < 10)
+	for ( i = 0; i < 9; i++)
 	{
-		b = 0;
-		while (b < 10)
-		{
-			c = 0;
-			while (c < 10)
-			{
-				verf(a, b, c);
-				c++;
-			}
-			b++;
-		}
-		a++;
+		j = (j + 1) * 2;
 	}
+	printf("猴子第一天摘了%d个桃子",j);
 
     return 0;
-}
-
-int verf(int a, int b, int c)
-{
-	int n, v;
-	n = a * 100 + b * 10 + c;
-	v = a * a * a + b * b * b + c * c * c;
-	if (n ==v)
-	{
-		printf("%5d", n);
-	}
-
-	return 0;
 }
