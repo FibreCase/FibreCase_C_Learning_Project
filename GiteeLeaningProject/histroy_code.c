@@ -1,6 +1,5 @@
 //************************************************************************
 //4.1.7
-
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <math.h>
@@ -35,7 +34,6 @@ int main()
 	}
 	return 0;
 }
-
 
 int ver(int b, int c)
 {
