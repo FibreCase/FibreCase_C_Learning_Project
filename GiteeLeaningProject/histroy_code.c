@@ -418,3 +418,67 @@
 //    }
 //    return 0;
 //}
+
+//*****************************************************************************
+//3.2.2
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//
+//int main()
+//{
+//    float x, y;
+//    scanf("%f%f", &x, &y);
+//    if (x == 0 && y == 0)
+//    {
+//        printf("(%.2f,%.2f)是原点", x, y);
+//    }
+//    else if (x == 0)
+//    {
+//        printf("(%.2f,%.2f)在y坐标轴上", x, y);
+//    }
+//    else if (y == 0)
+//    {
+//        printf("(%.2f,%.2f)在x坐标轴上", x, y);
+//    }
+//    else if (x > 0 && y > 0)
+//    {
+//        printf("(%.2f,%.2f)在第一象限", x, y);
+//    }
+//    else if (x < 0 && y > 0)
+//    {
+//        printf("(%.2f,%.2f)在第二象限", x, y);
+//    }
+//    else if (x < 0 && y < 0)
+//    {
+//        printf("(%.2f,%.2f)在第三象限", x, y);
+//    }
+//    else if (x > 0 && y < 0)
+//    {
+//        printf("(%.2f,%.2f)在第四象限", x, y);
+//    }
+// 
+//	  return 0;
+//}
+
+
+//*****************************************************************
+//3.2.3
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//#include <math.h>
+//
+//int main()
+//{
+//    float x, y;
+//    scanf("%f,%f", &x, &y);
+//    if (fabs(fabs(x) - 2) < 1 && fabs(fabs(y) - 2) < 1)
+//    {
+//        printf("该点高度为10米");
+//    }
+//    else
+//    {
+//        printf("该点高度为0米");
+//    }
+//
+//    return 0;
+//}
