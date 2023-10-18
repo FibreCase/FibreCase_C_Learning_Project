@@ -8,7 +8,7 @@ int main()
 {
 	int n, sum = 0;
 	scanf("%d", &n);
-
+	//这里使用子函数的目的是便于检测是否输出，便于输出的计数
 	for (int i = 1; i <= n; i++)
 	{
 		sum = sum + i;
