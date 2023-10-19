@@ -1,6 +1,6 @@
-# GiteeLeaningProject
+# Gitee_C_Learning_Project
 
-你好，欢迎来到FibreCase的代码学习仓库  
+你好，欢迎来到FibreCase的C语言代码学习仓库  
 请按照一下的提示使用
 
 ## 寻找作业的思路与答案？
@@ -20,10 +20,12 @@ https://gitee.com/fibrecase/fibrecase_c_learning/blob/master/GiteeLeaningProject
 
 ## 发现问题并提出建议？
 
-请登录Gitee后在该仓库页面issue页面提交
-我将尽快回复
+请登录Gitee后在该仓库页面issue页面提交  
+我将尽快回复  
+仓库内的许多代码缺少注释  
+希望得到你的帮助 
 
 ## 希望加入仓库？
 
 请联系通过各种方式联系我  
-比如Gitee主页的邮箱
+比如Gitee主页的邮箱  
