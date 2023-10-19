@@ -1,21 +1,23 @@
+//************************************************************************
+//4.1.8
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <math.h>
 
 int main()
 {
-	int m, n, i, r, x, y;
-	scanf("%d,%d,&m,&n");
-	x = m * n;
-	if (m < n)
+	int n, sum = 0;
+	scanf("%d", &n);
+
+	for (int i = 1; i <= n; i++)
 	{
-		i = m;
-		m = n;
-		n = i;
+		sum = sum + i;
 	}
 
 	printf("1+2+...+%d=%d\n", n, sum);
 	return 0;
 }
+
 
 //************************************************************************
 //4.1.7
