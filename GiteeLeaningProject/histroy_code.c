@@ -346,10 +346,6 @@ int main()
 	}
 
 	printf("奖金是%.2f", mon);
-		mon = inter * 0.1 + mon;
-	}
-
-	printf("奖金是%.2f", mon);
 	return 0;
 }
 
@@ -481,7 +477,7 @@ int main()
 	return 0;
 }
 
-in roundff(float xx)
+int roundff(float xx)
 {
 	float y;
 	int z;
@@ -498,7 +494,7 @@ in roundff(float xx)
 }
 
 
-*****************************************************************************
+//*****************************************************************************
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <math.h>
@@ -513,7 +509,7 @@ int main()
 	return 0;
 }
 
-****************************************************
+//****************************************************
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <math.h>
@@ -529,7 +525,7 @@ int main()
 	return 0;
 }
 
-*********************************************************
+//*********************************************************
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <math.h>
@@ -543,7 +539,7 @@ int main()
 	printf("%.2f", rst);
 }
 
-************************************************************
+//************************************************************
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <math.h>
@@ -577,7 +573,7 @@ int roundff(float x)
 }
 
 
-**********************************************************************
+//**********************************************************************
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <math.h>
@@ -613,7 +609,7 @@ int roundff(float xx)
 	return z;//输出的即为对xx取后的结果
 }
 
-**************************************************************
+//**************************************************************
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
@@ -632,7 +628,7 @@ int main()
 	return 0;
 }
 
-***********************************************
+//***********************************************
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
@@ -665,7 +661,7 @@ int main()
 	return 0;
 }
 
-***************************
+//***************************
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
@@ -683,7 +679,7 @@ int main()
 }
 
 
-*******************************
+//*******************************
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <math.h>
@@ -711,7 +707,7 @@ int main()
 
 
 
-**********************************************************************
+//**********************************************************************
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <math.h>
@@ -743,7 +739,7 @@ int main()
 	return 0;
 }
 
-**************************************************************
+//**************************************************************
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include<math.h>
@@ -769,7 +765,7 @@ int main()
 	return 0;
 }
 
-*****************************************************
+//*****************************************************
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <math.h>
@@ -784,7 +780,7 @@ int main()
 	return 0;
 }
 
-****************************************************
+//****************************************************
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <math.h>
@@ -800,7 +796,7 @@ int main()
 	return 0;
 }
 
-*********************************************************
+//*********************************************************
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <math.h>
@@ -814,7 +810,7 @@ int main()
 	printf("%.2f", rst);
 }
 
-************************************************************
+//************************************************************
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <math.h>
