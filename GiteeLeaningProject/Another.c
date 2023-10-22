@@ -20,12 +20,10 @@ int main()
 		}
 	}
 
-
 	if (s == 0)
 	{
 		printf("No output");
 	}
-
 
 	return 0;
 }
