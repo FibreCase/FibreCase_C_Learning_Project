@@ -1,19 +1,42 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#include <math.h>
 
 int main() 
 {
-	int n,sum=0;
+	int n,a=0,b=0,c,j,i=0,s=0;
+	int vrfy(int,int,int);
 	scanf("%d", &n);
 
-	for (int i = 1; i <= n; i++)
+	for (c = n; a <= n; b = 0, a++)
 	{
-		sum = sum + i;
+		for (j = n - a, c = j; b <= j; b++, c = j - b)
+		{
+			if (vrfy(a,b,c)==1)
+			{
+				printf("%d %d %d\n",a,b,c);
+				s++;
+			}
+		}
 	}
 
-	printf("1+2+...+%d=%d\n", n, sum);
+
+	if (s == 0)
+	{
+		printf("No output");
+	}
+
+	
     return 0;
 }
 
-
+int vrfy(int a,int b,int c)
+{
+	if (a*50 + b *20 + c == 1200)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+}
