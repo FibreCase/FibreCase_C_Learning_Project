@@ -5,7 +5,6 @@
 
 int main()
 {
-	//分解一个数
 	int i = 2;
 	int vrfy(int);
 
