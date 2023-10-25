@@ -4,7 +4,6 @@
 
 int main()
 {
-	//分解一个数
 	int i = 2;
 	int vrfy(int);
 
@@ -12,7 +11,7 @@ int main()
 	{
 		if (vrfy(i) == 1)
 		{
-			printf("%d\n",i);
+			printf("%d\n", i);
 		}
 	}
 
@@ -21,13 +20,17 @@ int main()
 
 int vrfy(int i)
 {
-	int vrfy_100(int); 
+	int vrfy_100(int);
 	int vrfy_268(int);
 	if (vrfy_100(i) == 1)
 	{
 		if (vrfy_268(i) == 1)
 		{
 			return 1;
+		}
+		else
+		{
+			return 0;
 		}
 	}
 	else
@@ -45,6 +48,10 @@ int vrfy_100(int i)
 	{
 		return 1;
 	}
+	else
+	{
+		return 0;
+	}
 }
 
 int vrfy_268(int i)
@@ -55,5 +62,9 @@ int vrfy_268(int i)
 	if (i == j * j)
 	{
 		return 1;
+	}
+	else
+	{
+		return 0;
 	}
 }

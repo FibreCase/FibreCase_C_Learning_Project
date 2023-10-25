@@ -1,3 +1,91 @@
+//4.2.6
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+	int n, a;
+	scanf("%d", &n);
+	printf("1 1 ");
+
+	for (int i = 1, j = 1; (i + j) < n;)
+	{
+		i = i + j;
+		printf("%d ", i);
+
+		a = i;
+		i = j;
+		j = a;
+	}
+
+	return 0;
+}
+
+//4.2.5
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+	printf("最好的赛车编号为3");
+
+	return 0;
+}
+
+//4.2.4
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+	int vrfy(int);
+
+	for (int i = 1; i < 100; i++)
+	{
+		if (vrfy(i) == 1)
+		{
+			printf("%d\n", i);
+		}
+	}
+
+	return 0;
+}
+
+int vrfy(int i)
+{
+	int s;
+	if (i / 10 == 0)
+	{
+		if ((i * i) % 10 == i)
+		{
+			return 1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+	if (i / 10 != 0)
+	{
+		s = i * i;
+		if (s % 100 == i)
+		{
+			return 1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+	else
+	{
+		return 0;
+	}
+}
+
 //4.2.3
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
@@ -29,6 +117,10 @@ int vrfy(int i)
 		{
 			return 1;
 		}
+		else
+		{
+			return 0;
+		}
 	}
 	else
 	{
@@ -45,6 +137,10 @@ int vrfy_100(int i)
 	{
 		return 1;
 	}
+	else
+	{
+		return 0;
+	}
 }
 
 int vrfy_268(int i)
@@ -55,6 +151,10 @@ int vrfy_268(int i)
 	if (i == j * j)
 	{
 		return 1;
+	}
+	else
+	{
+		return 0;
 	}
 }
 
