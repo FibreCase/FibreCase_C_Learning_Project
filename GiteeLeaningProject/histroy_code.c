@@ -1,3 +1,35 @@
+//4.2.11
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+	void vrfy(int, int, int);
+	for (int i = 1; i <= 4; i++)
+	{
+		for (int j = 1; j <= 4; j++)
+		{
+			for (int k = 1; k <= 4; k++)
+			{
+				vrfy(i, j, k);
+			}
+		}
+	}
+
+	return 0;
+}
+
+void vrfy(int i, int j, int k)
+{
+	int s;
+	if (i != j && i != k && j != k)
+	{
+		s = i * 100 + j * 10 + k;
+		printf("%d\n", s);
+	}
+}
+
 //4.2.10
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
