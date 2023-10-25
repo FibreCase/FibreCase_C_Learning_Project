@@ -413,7 +413,7 @@ int main()
 	int n, j = 0, k = 0;
 	scanf("%d", &n);
 
-	int prinum[10000] = { 0 };
+	int prinum[1000] = { 0 };
 	int vrfy_pri(int);
 
 	for (int i = 1; i <= n; i++)
@@ -426,7 +426,7 @@ int main()
 	}
 
 	//对于给定数字从大到小除以质数进行测试
-	int factor[10000] = { 0 };
+	int factor[1000] = { 0 };
 	int x = n;
 	j--;
 	for (; j >= 0;)
@@ -482,7 +482,10 @@ int vrfy_pri(int i)
 	{
 		return 1;
 	}
-
+	else
+	{
+		return 0;
+	}
 }
 
 //5.1.4
