@@ -1,3 +1,114 @@
+//5.1.4
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+	int a = 0, b = 0, c = 40, j, i = 0;
+	int vrfy(int, int, int);
+
+	for (; a <= 40; b = 0, c = 0, a++)
+	{
+		for (j = 40 - a, c = j; b <= j; b++, c = j - b)
+		{
+			if (vrfy(a, b, c) == 1)
+			{
+				i++;
+				printf("第%d种:%d个男人,%d个女人,%d个小孩\n", i, a, b, c);
+			}
+		}
+	}
+
+	return 0;
+}
+
+int vrfy(int a, int b, int c)
+{
+	if (a * 40 + b * 30 + c * 5 == 400)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+//5.1.3
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+#define pi 3.1416
+
+int main()
+{
+	float r, h;
+	double c, s, v;
+
+	scanf("%f,%f", &r, &h);
+	c = 2 * pi * r;
+	s = r * r * pi;
+	v = s * h;
+
+	printf("圆周长:%.2f\n圆面积:%.2f\n圆柱体积:%.2f", c, s, v);
+
+	return 0;
+}
+
+//5.1.2
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<math.h>
+
+int main()
+{
+	char c1, c2, c3, c4, c5;
+	int n;
+	//使用数组会方便些，但是题目要求使用变量
+
+	c1 = 'C';
+	c2 = 'h';
+	c3 = 'i';
+	c4 = 'n';
+	c5 = 'a';
+	scanf("%d", &n);
+
+	c1 = c1 + n;
+	c2 = c2 + n;
+	c3 = c3 + n;
+	c4 = c4 + n;
+	c5 = c5 + n;
+
+	printf("%c%c%c%c%c", c1, c2, c3, c4, c5);
+
+	return 0;
+}
+
+//5.1.1
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<math.h>
+
+int main()
+{
+	int n;
+	float r = 0.09;
+	double p = 1;
+	scanf("%d", &n);
+
+	for (int i = 0; i < n; i++)
+	{
+		p = p * (1 + r);
+	}
+
+	p = p * 100;
+
+	printf("%.2f%%", p);
+
+	return 0;
+}
+
 //************************************************************************
 //4.1.8
 #define _CRT_SECURE_NO_WARNINGS
