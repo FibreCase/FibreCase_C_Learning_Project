@@ -1,3 +1,26 @@
+//4.2.8
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+	int n, s = 1, r = 0;
+	scanf("%d", &n);
+
+	for (int i = 1; i <= n; i++, r = r + s, s = 1)
+	{
+		for (int j = 1; j <= i; j++)
+		{
+			s = s * j;
+		}
+	}
+
+	printf("%d", r);
+
+	return 0;
+}
+
 //4.2.7
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
