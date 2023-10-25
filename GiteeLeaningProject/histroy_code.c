@@ -1,3 +1,56 @@
+//4.2.10
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+	int n;
+	scanf("%d", &n);
+
+	for (int i = n; i > 0; i--)
+	{
+		for (int j = 0; j < i; j++)
+		{
+			printf("*");
+		}
+		printf("\n");
+	}
+
+	return 0;
+}
+
+//4.2.9
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+	float h;
+	scanf("%f", &h);
+	float hh[11] = { 0 };
+	hh[0] = h;
+
+	for (int i = 1; i <= 10; i++)
+	{
+		hh[i] = hh[i - 1] / 2;
+	}
+
+	float r = 0;
+	r = hh[0];
+	for (int i = 1; i < 10; i++)
+	{
+		r = r + 2 * hh[i];
+	}
+
+	r = r + hh[10];
+
+	printf("第10次落地时共经过%f米\n第10次反弹%f米", r, hh[10]);
+
+	return 0;
+}
+
 //4.2.8
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
