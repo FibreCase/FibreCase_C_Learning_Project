@@ -1,3 +1,53 @@
+//4.2.2
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+	//分解一个数
+	int i = 2;
+	int vrfy(int);
+
+	for (; i <= 1000; i++)
+	{
+		if (vrfy(i) == 1)
+		{
+			printf("%d\n", i);
+		}
+	}
+
+	return 0;
+}
+
+int vrfy(int i)
+{
+	int x = i, s = 1, j = 0;
+	int factor[10000] = { 0 };
+	for (int k = 2; k < i; k++)
+	{
+		if (x % k == 0)
+		{
+			factor[j] = k;
+			j++;
+		}
+	}
+
+	for (int y = 0; y < j; y++)
+	{
+		s = s + factor[y];
+	}
+
+	if (s == i)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+}
+
 //4.2.1
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
