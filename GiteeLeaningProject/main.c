@@ -21,5 +21,39 @@ int main()
 
 int vrfy(int i)
 {
-	
+	int vrfy_100(int); 
+	int vrfy_268(int);
+	if (vrfy_100(i) == 1)
+	{
+		if (vrfy_268(i) == 1)
+		{
+			return 1;
+		}
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+int vrfy_100(int i)
+{
+	int j;
+	i = i + 100;
+	j = sqrt(i);
+	if (i == j * j)
+	{
+		return 1;
+	}
+}
+
+int vrfy_268(int i)
+{
+	int j;
+	i = i + 268;
+	j = sqrt(i);
+	if (i == j * j)
+	{
+		return 1;
+	}
 }
