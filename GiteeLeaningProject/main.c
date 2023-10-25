@@ -4,47 +4,54 @@
 
 int main()
 {
-	int i = 2;
-	int vrfy(int);
+	int m, n, j = 0;
+	int prinum[10000] = { 0 };
+	int vrfy_pri(int);
 
-	for (; i <= 10000; i++)
+	scanf("%d%d", &m, &n);
+
+	for (int i = m; i <= n; i++)
 	{
-		if (vrfy(i) == 1)
+		if (vrfy_pri(i) == 1)
 		{
-			printf("%d\n", i);
+			prinum[j] = i;
+			j++;
+		}
+	}
+
+	for (int i = 0; i < j; i++)
+	{
+		printf("%5d", prinum[i]);
+		if ((i + 1) % 5 == 0)
+		{
+			printf("\n");
 		}
 	}
 
 	return 0;
 }
 
-int vrfy(int i)
+int vrfy_pri(int i)
 {
-	int vrfy_100(int);
-	int vrfy_268(int);
-	if (vrfy_100(i) == 1)
+	int h = 0;
+
+	if (i <= 1)
 	{
-		if (vrfy_268(i) == 1)
+		return 0;
+	}
+	if (i == 2)
+	{
+		return 1;
+	}
+	for (int k = 2; k < i; k++)
+	{
+		if (i % k == 0)
 		{
-			return 1;
-		}
-		else
-		{
+			h++;
 			return 0;
 		}
 	}
-	else
-	{
-		return 0;
-	}
-}
-
-int vrfy_100(int i)
-{
-	int j;
-	i = i + 100;
-	j = sqrt(i);
-	if (i == j * j)
+	if (h == 0)
 	{
 		return 1;
 	}
@@ -52,19 +59,5 @@ int vrfy_100(int i)
 	{
 		return 0;
 	}
-}
 
-int vrfy_268(int i)
-{
-	int j;
-	i = i + 268;
-	j = sqrt(i);
-	if (i == j * j)
-	{
-		return 1;
-	}
-	else
-	{
-		return 0;
-	}
 }
