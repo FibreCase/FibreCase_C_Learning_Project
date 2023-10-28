@@ -5,7 +5,7 @@
 ### 快速链接
 
 *[C语言作业代码点我！](https://gitee.com/fibrecase/fibrecase_c_learning/blob/master/GiteeLeaningProject/histroy_code.c)*  
-*[其他习题代码点我！](https://gitee.com/fibrecase/fibrecase_c_learning/blob/master/GiteeLeaningProject/histroy_code_another.c)*  
+*[其他习题代码点我！](https://gitee.com/fibrecase/fibrecase_c_learning/blob/master/GiteeLeaningProject/history_code_another.c)*  
 ## 仓库简介
 cd ./GiteeLeaningProject  
 ./history_code_another -来自同学、试题中的一些问题的代码  
