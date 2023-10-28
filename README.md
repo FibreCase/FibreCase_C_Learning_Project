@@ -1,22 +1,28 @@
 # Gitee_C_Learning_Project
 
 你好，欢迎来到FibreCase的C语言代码学习仓库  
-请按照以下的提示使用
+
+### 快速链接
+
+*[C语言作业代码点我！](https://gitee.com/fibrecase/fibrecase_c_learning/blob/master/GiteeLeaningProject/histroy_code.c)*  
+*[第三方代码点我！](https://gitee.com/fibrecase/fibrecase_c_learning/blob/master/GiteeLeaningProject/histroy_code_another.c)*  
+## 仓库简介
+cd ./GiteeLeaningProject  
+./history_code_another -来自同学、试题中的一些问题的代码  
+./history_code -来自作业题目的代码  
+./main & ./test -正在构建的代码  
+./toolkit_float & ./toolkit_int -由FibreCase开发的个人工具库，正在完善中  
+
+### 不知道如何使用？阅读下面的指南
 
 ## 寻找作业的思路与答案？
 请前往 fibrecase_c_learning/GiteeLeaningProject/histroy_code.c  
 手机版页面请点击“代码”选项卡访问文件  
 历史作业代码已经按照时间倒序排列  
 如4.1.7指第四章第一次作业第七题  
-
-如果你不知道如何找到该文件  
-请访问以下链接  
+  
+或直接访问以下链接  
 https://gitee.com/fibrecase/fibrecase_c_learning/blob/master/GiteeLeaningProject/histroy_code.c
-
-## 查看目前正在进行的项目？
-
-请前往 fibrecase_c_learning/GiteeLeaningProject/main.c  
-手机版页面请点击“代码”选项卡访问文件  
 
 ## 发现问题并提出建议？
 
@@ -27,5 +33,5 @@ https://gitee.com/fibrecase/fibrecase_c_learning/blob/master/GiteeLeaningProject
 
 ## 希望加入仓库？
 
-请联系通过各种方式联系我  
-比如Gitee主页的邮箱  
+请通过各种方式联系我  
+如Gitee主页的邮箱等  

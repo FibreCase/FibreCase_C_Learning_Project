@@ -24,7 +24,13 @@
     <ClCompile Include="test.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Another.c">
+    <ClCompile Include="history_code_another.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="toolkit_int.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="toolkit_float.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
