@@ -496,13 +496,12 @@ int vrfy_pri(int i)
 int main()
 {
 	int a = 0, b = 0, c = 40, j, i = 0;
-	int vrfy(int, int, int);
 
 	for (; a <= 40; b = 0, c = 0, a++)
 	{
 		for (j = 40 - a, c = j; b <= j; b++, c = j - b)
 		{
-			if (vrfy(a, b, c) == 1)
+			if (a * 40 + b * 30 + c * 5 == 400)
 			{
 				i++;
 				printf("第%d种:%d个男人,%d个女人,%d个小孩\n", i, a, b, c);
@@ -511,18 +510,6 @@ int main()
 	}
 
 	return 0;
-}
-
-int vrfy(int a, int b, int c)
-{
-	if (a * 40 + b * 30 + c * 5 == 400)
-	{
-		return 1;
-	}
-	else
-	{
-		return 0;
-	}
 }
 
 //5.1.3

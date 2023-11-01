@@ -1,3 +1,44 @@
+//from JinRenn
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    int getnum();
+
+    printf("%d", getnum());
+
+    return 0;
+}
+
+//This fuction is used to get the number
+int getnum()
+{
+    char c;
+    int i = 0, s = 0, n, m;
+    int cc[99] = { ' ' };
+    int ss[99] = { 0 };
+
+    while ((c = getchar()) != ' ' || (c = getchar()) != '\n')
+    {
+        cc[i] = c - 48;
+        i++;
+    }
+
+    i--;
+
+    for (n = i; i >= 0; i--)
+    {
+        m = n - i;
+        s = s + cc[i] * pow(10, m);
+    }
+
+    return s;
+}
+
+
+
 //from 2022 MOS∏¥ ‘ ‘Ã‚ 1
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
