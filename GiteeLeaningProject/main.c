@@ -1,24 +1,61 @@
-﻿//5.1.4
-#define _CRT_SECURE_NO_WARNINGS
+﻿#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#include <math.h>
+//代码因设备原因未经调试，可能有bug
 
+
+//利用倒计时的想法，为每一头新牛赋予倒计时3，每轮-1，当倒计时到0时即认为
+//该牛具有繁殖能力，则每轮在数组末尾添加一个3（新牛）
 int main()
 {
-	int a = 0, b = 0, c = 40, j, i = 0;
+	int cow[999] = {0};//由于一头牛的状态只有0-3，9可用于检测数组有意义部分末尾
 
-	for (; a <= 40; b = 0, c = 0, a++)
+	//由于C99不支持将数组初始化为一个非零值，则手动赋值
+	for (int i = 0; i < 999; i++)
 	{
-		for (j = 40 - a, c = j; b <= j; b++, c = j - b)
+		cow[i] = 9;
+	}
+
+	int n = 10, y = 0, a = 0;//n为轮数（年数）
+
+	cow[0] = 3;
+
+	//用于表示轮数
+	for (int i = 0; y < n; y++)
+	{
+		//遍历整个数组
+		while (cow[i] != 9)
 		{
-			if (a * 40 + b * 30 + c * 5 == 400)
+			//为0的牛
+			if (cow[i] == 0)
 			{
+				//寻找数组有意义末尾
+				while (cow[a] != 9)
+				{
+					a++;
+				}
+				//生成新牛
+				cow[a] = 3;
+				a = 0;
 				i++;
-				printf("第%d种:%d个男人,%d个女人,%d个小孩\n", i, a, b, c);
+			}
+			//不为0的牛
+			else
+			{
+				cow[i] = cow[i] - 1;
+				i++;
 			}
 		}
+		//i归零，下一轮（年）
+		i = 0;
 	}
+
+	//寻找数组末尾并输出，即为牛的数量
+	a = 0;
+	while (cow[a] != 9)
+	{
+		a++;
+	}
+	printf("%d", a);
 
 	return 0;
 }
-
