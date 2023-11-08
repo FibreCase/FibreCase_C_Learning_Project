@@ -1,28 +1,23 @@
-#define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
-
+#include<stdio.h>
 int main()
 {
-    int swch(int, int, int);
-    int y, m, d;
-    scanf("%d,%d,%d", &y, &m, &d);
-
-    y, m, d = swch(y, m, d);
-    printf("%d%d%d", y, m, d);
-
+    int i = 0;
+    int a[8] = { 0 };
+    float sum = 0;
+    for (i = 0; i < 8; i++)
+    {
+        scanf_s("%d", &a[i]);
+        sum = sum + a[i];
+    }
+    sum = sum / 8;
+    printf("平均值是%.1f\n", sum);
+    printf("大于等于平均值的元素是");
+    for (i = 0; i < 8; i++)
+    {
+        if (a[i] >= sum)
+            printf("%d ", a[i]);
+    }
     return 0;
 }
 
-int swch(int y, int m, int d)
-{
-    if (m <= 2)
-    {
-        m = m + 12;
-        y = y - 1;
-        return y, m, d;
-    }
-    else
-    {
-        return y, m, d;
-    }
-}
+

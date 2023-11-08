@@ -1,3 +1,211 @@
+//6.1.5
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main()
+{
+	int n = 10, t;
+	int a[10] = { 0 };
+
+	for (int i = 0; i < 5; i++)
+	{
+		scanf("%d", &a[i]);
+	}
+
+	for (int i = 5; i < 10; i++)
+	{
+		scanf("%d", &a[i]);
+	}
+
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n - 1; j++)
+		{
+			if (a[j] > a[j + 1])
+			{
+				t = a[j];
+				a[j] = a[j + 1];
+				a[j + 1] = t;
+			}
+		}
+	}
+
+	for (int i = 0; i < n; i++)
+	{
+		printf("%d ", a[i]);
+	}
+
+	return 0;
+}
+
+
+//6.1.4
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main()
+{
+	int n = 10, t;
+	int a[10] = { 0 };
+
+	for (int i = 0; i < n; i++)
+	{
+		scanf("%d", &a[i]);
+	}
+
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n - 1; j++)
+		{
+			if (a[j] > a[j + 1])
+			{
+				t = a[j];
+				a[j] = a[j + 1];
+				a[j + 1] = t;
+			}
+		}
+	}
+
+	for (int i = 0; i < n; i++)
+	{
+		printf("%d ", a[i]);
+	}
+
+	return 0;
+}
+
+//6.1.3
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main()
+{
+	int a[10] = { 0 };
+	int b[10] = { 0 };
+	int max, k = 0;
+
+	//To give the number
+	for (int i = 0; i < 10; i++)
+	{
+		scanf("%d", &a[i]);
+	}
+
+	max = a[0];
+	for (int i = 1; i < 10; i++)
+	{
+		if (a[i] == max)
+		{
+			k++;
+			b[k] = i;
+		}
+		else if (a[i] > max)
+		{
+			max = a[i];
+			b[k] = i;
+		}
+	}
+
+	printf("最大值是%d,其在数组中位置是", max);
+
+	for (int i = 0; i < k + 1; i++)
+	{
+		printf("%d ", b[i]);
+	}
+
+	return 0;
+}
+
+//6.1.2
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main()
+{
+	int num[9999] = { 0 };
+	int s = 0, k = 0, n, max, min;
+	float a;
+
+	scanf("%d", &n);
+
+	//赋值部分
+	for (int i = 0; i < n; i++)
+	{
+		scanf("%d", &num[i]);
+	}
+
+	//最大值求值部分
+	max = num[0];
+	k = 0;
+	for (int j = 0; j < n; j++)
+	{
+		if (num[j] > max)
+		{
+			max = num[j];
+			k = j;
+		}
+	}
+	printf("最大值%d\n最大值下标%d\n", max, k);
+
+	//最小值求值部分
+	min = num[0];
+	k = 0;
+	for (int j = 0; j < n; j++)
+	{
+		if (num[j] < min)
+		{
+			min = num[j];
+			k = j;
+		}
+	}
+	printf("最小值%d\n最小值下标%d\n", min, k);
+
+	//平均值求值部分
+	for (int i = 0; i < n; i++)
+	{
+		s = s + num[i];
+	}
+
+	a = (float)s / n;
+
+	printf("平均值%.2f\n", a);
+
+	return 0;
+}
+
+
+//6.1.1
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main()
+{
+	int num[8] = { 0 };
+	int s = 0, j = 0;
+	float a;
+
+	scanf("%d%d%d%d%d%d%d%d", &num[0], &num[1], &num[2], &num[3], &num[4], &num[5], &num[6], &num[7]);
+
+	for (int i = 0; i < 8; i++)
+	{
+		s = s + num[i];
+	}
+
+	a = (float)s / 8;
+
+	printf("平均值是%.1f\n", a);
+
+	printf("大于等于平均值的元素是");
+	for (; j < 8; j++)
+	{
+		if ((float)num[j] >= a)
+		{
+			printf("%d ", num[j]);
+		}
+	}
+
+	return 0;
+}
+
 //4.2.12
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
