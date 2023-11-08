@@ -3,28 +3,37 @@
 
 int main()
 {
-	int a[15] = { 1,4,6,9,9,6,19,4,4,8,12,1,9,18,19 };
-	int t;
+    //***********************
+    int i = 0, n = 0, t;
+    int b[999] = { 0 }; 
+    int a[999] = { 0 };
 
-	scanf("%d", &t);
+    while (1)
+    {
+        scanf("%d", &t);
+        if (t != -1)
+        {
+            n++;
+            b[i] = t;
+            i++;
+        }
+        else
+        {
+            break;
+        }
+    }
 
-	for (int i = 0; i < 15; i++)
-	{
-		if (a[i] = t)
-		{
-			for (; i < 15; i++)
-			{
-				a[i] = a[i + 1];
-			}
-			break;
-		}
-	}
+    for (int j = 0,i = n-1; i >= 0; i--,j++)
+    {
+        a[i] = b[j];
+    }
 
-
-	for (int i = 0; i < n -1; i++)
-	{
-		printf("%d ", a[i]);
-	}
-
+    //***********************
+    for (i = 0; i < n; i++)
+    {
+        printf("%d ", a[i]);
+    }
+        
+    
     return 0;
 }

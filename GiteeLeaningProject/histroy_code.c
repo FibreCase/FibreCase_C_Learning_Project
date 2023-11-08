@@ -1,3 +1,96 @@
+//6.b1.3
+int i = 0, n = 0, t;
+int b[999] = { 0 };
+int a[999] = { 0 };
+
+while (1)
+{
+	scanf("%d", &t);
+	if (t != -1)
+	{
+		n++;
+		b[i] = t;
+		i++;
+	}
+	else
+	{
+		break;
+	}
+}
+
+for (int j = 0, i = n - 1; i >= 0; i--, j++)
+{
+	a[i] = b[j];
+}
+
+
+//6.b1.2
+int t, i, k = 0;
+
+scanf("%d", &t);
+
+for (i = 0; i < 15;)
+{
+	if (a[i] == t && i != 15)
+	{
+		for (int j = i; j < 14; j++)
+		{
+			a[j] = a[j + 1];
+		}
+		k++;
+	}
+	else if (a[i] == t && i == 15)
+	{
+		i++;
+		k++;
+	}
+	else
+	{
+		i++;
+	}
+	for (int c = 0; c < k; c++)
+	{
+		a[14 - c] = 0;
+	}
+}
+
+n = n - k;
+
+
+//6.b1.1
+int b[11] = { 0 };
+int t;
+
+scanf("%d", &t);
+
+for (int i = 0; i < 11; i++)
+{
+	if (t < a[i])
+	{
+		b[i] = t;
+		//move the number
+		for (; i < 11; i++)
+		{
+			b[i + 1] = a[i];
+		}
+		break;
+	}
+	else
+	{
+		b[i] = a[i];
+		if (i == 10)
+		{
+			b[i] = t;
+		}
+	}
+}
+
+for (int i = 0; i < 11; i++)
+{
+	printf("%d ", b[i]);
+}
+
+
 //6.1.5
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
