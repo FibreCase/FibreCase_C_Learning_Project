@@ -13,6 +13,9 @@ cd ./GiteeLeaningProject
 ./history_code -来自作业题目的代码  
 ./main & ./test -正在构建的代码  
 ./toolkit_float & ./toolkit_int -由FibreCase开发的个人工具库，正在完善中  
+  
+代码使用Visual Studio 2022编辑，编译器为MSVS  
+正在尝试转入CLion编辑，并使用MinGW编译
 
 ### 不知道如何使用？阅读下面的指南
 

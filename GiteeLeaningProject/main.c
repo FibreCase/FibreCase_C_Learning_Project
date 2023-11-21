@@ -1,39 +1,23 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+void cha(int* u, int* v);
 
 int main()
 {
-    //***********************
-    int i = 0, n = 0, t;
-    int b[999] = { 0 }; 
-    int a[999] = { 0 };
+	int x, y;
+	scanf("%d%d", &x, &y);
 
-    while (1)
-    {
-        scanf("%d", &t);
-        if (t != -1)
-        {
-            n++;
-            b[i] = t;
-            i++;
-        }
-        else
-        {
-            break;
-        }
-    }
+	cha(&x, &y);
+	
+	printf("%d %d", x, y);
+	return 0;
+}
 
-    for (int j = 0,i = n-1; i >= 0; i--,j++)
-    {
-        a[i] = b[j];
-    }
+void cha(int *u, int *v)
+{
+	int t;
 
-    //***********************
-    for (i = 0; i < n; i++)
-    {
-        printf("%d ", a[i]);
-    }
-        
-    
-    return 0;
+	t = *u;
+	*u = *v;
+	*v = t;
 }
