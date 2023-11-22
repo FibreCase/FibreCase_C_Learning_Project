@@ -1,3 +1,249 @@
+//6.2.8
+#include <stdio.h>
+#include <string.h>
+
+int
+main()
+{
+	int st, en, j = 0;
+	char ch[999];
+	char su[999];
+	gets(ch);
+	scanf("%d", &st);
+	scanf("%d", &en);
+
+	if (st >= strlen(ch) || st == 0) {
+		printf("起始位置%d越界", st);
+		return 0;
+	}
+	if ((st + en) >= strlen(ch))
+		en = strlen(ch) - st + 1;
+
+	for (int i = st - 1; i < st + en - 1; ++i) {
+		su[j++] = ch[i];
+	}
+
+	su[j] = '\0';
+
+	printf("%s", su);
+
+	return 0;
+}
+
+//6.2.7
+#include <stdio.h>
+#include <string.h>
+
+int
+main()
+{
+	int i = 0;
+	char ch[999];
+	char c;
+	int k = 0;
+	gets(ch);
+	scanf("%c", &c);
+	for (; i < strlen(ch); ++i) {
+		if (ch[i] == c) {
+			k = 1;
+			break;
+		}
+	}
+
+
+	ch[i] = '\0';
+
+	if (k == 0) {
+		printf("特定字符是%c\n", c);
+		printf("特定字符不存在");
+	}
+	else {
+		printf("特定字符是%c\n", c);
+		printf("删除特定字符%c后的字符串是%s", c, ch);
+	}
+
+	return 0;
+}
+
+
+//6.2.6
+#include <stdio.h>
+#include <string.h>
+
+int
+main()
+{
+	char ch[999];
+	int sum = 0;
+	gets(ch);
+
+	for (int i = 0; i < strlen(ch); ++i) {
+		if (ch[i] >= '0' && ch[i] <= '9')
+			sum++;
+	}
+
+	printf("%d", sum);
+	return 0;
+}
+
+//6.2.5
+#include <stdio.h>
+#include <string.h>
+
+int
+main()
+{
+	char or1[99], or2[99], su[99];
+
+	gets(or1);
+	gets(or2);
+
+	for (int i = 0, j = 0, k = 0; i < strlen(or1) + strlen(or2); ++i) {
+		if (i < strlen(or1))
+			su[i] = or1[j++];
+		else
+			su[i] = or2[k++];
+	}
+
+	printf("%s", su);
+	return 0;
+}
+
+//6.2.4
+#include <stdio.h>
+#include <string.h>
+
+int
+main()
+{
+	char ch[100];
+	int sum = 0;
+
+	while (1) {
+		gets(ch);
+		if (strcmp(ch, "stop") == 0)
+			break;
+		if (strcmp(ch, "") == 0)
+			continue;
+		for (int i = 0; i < strlen(ch) - 1; ++i) {
+			if ((ch[i] != ' ') && (ch[i + 1] == ' '))
+				sum++;
+		}
+		if (ch[strlen(ch) - 1] != ' ')
+			sum++;
+	}
+
+	printf("%d", sum);
+	return 0;
+}
+
+//6.2.3
+#include <stdio.h>
+#include <string.h>
+
+int
+main()
+{
+	char ch[8];
+	int n[8];
+	int fn[8];
+	int t = 0;
+	gets(ch);
+
+	unsigned long long l = strlen(ch);
+	for (int i = 0; i < l; ++i) {
+		n[i] = (int)ch[i] - 48;
+		fn[l - 1 - i] = (int)ch[i] - 48;
+	}
+
+	for (int i = 0; i < l / 2; ++i) {
+		if (n[i] != fn[i])
+			t = 1;
+	}
+
+	if (t == 1) {
+		for (int i = 0; i < l; ++i) {
+			printf("%d", n[i]);
+		}
+		printf("不是回文数");
+	}
+	else {
+		for (int i = 0; i < l; ++i) {
+			printf("%d", n[i]);
+		}
+		printf("是回文数");
+	}
+}
+
+
+//6.2.2
+#include <stdio.h>
+#include <string.h>
+
+int
+main()
+{
+	char ch[99];
+	gets(ch);
+	printf("字符串长度是%llu", strlen(ch));
+
+	return 0;
+}
+
+//6.2.1
+#include <stdio.h>
+#include <string.h>
+
+int
+main()
+{
+	char content[999] = { 0 };
+	char c;
+	int t, l = 0, s = 0, n = 0, b = 0, e = 0;
+
+	while (1) {
+		gets(content);
+		if (strcmp("end", content) == 0) {
+			break;
+		}
+		else {
+			for (int i = 0; i < strlen(content); ++i) {
+				c = content[i];
+				if (c >= 'a' && c <= 'z')
+					t = 0;
+				else if (c >= 'A' && c <= 'Z')
+					t = 1;
+				else if (c == ' ')
+					t = 2;
+				else if (c >= '0' && c <= '9')
+					t = 3;
+				else
+					t = 4;
+
+				switch (t) {
+				case 0: s++;
+					break;
+				case 1: l++;
+					break;
+				case 2: b++;
+					break;
+				case 3: n++;
+					break;
+				case 4: e++;
+					break;
+				default: break;
+				}
+			}
+
+		}
+	}
+
+	printf("大写字母有%d个\n小写字母有%d个\n数字有%d个\n空格有%d个\n其他字符有%d个", l, s, n, b, e);
+	return 0;
+}
+
+
+
 //6.b1.3
 int i = 0, n = 0, t;
 int b[999] = { 0 };

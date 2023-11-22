@@ -1,23 +1,29 @@
-﻿#define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
-void cha(int* u, int* v);
+﻿#include <stdio.h>
+#include <string.h>
 
-int main()
+int
+main()
 {
-	int x, y;
-	scanf("%d%d", &x, &y);
+	int st, en, j = 0;
+	char ch[999];
+	char su[999];
+	gets(ch);
+	scanf_s("%d", &st);
+	scanf_s("%d", &en);
 
-	cha(&x, &y);
-	
-	printf("%d %d", x, y);
+	if (st >= strlen(ch) || st == 0) {
+		printf("起始位置%d越界", st);
+		return 0;
+	}
+	if ((st + en) >= strlen(ch))
+		en = strlen(ch) - st;
+
+	for (int i = st - 1; i < st + en; ++i) {
+		su[j++] = ch[i];
+	}
+
+	printf("%s", su);
+
 	return 0;
 }
 
-void cha(int *u, int *v)
-{
-	int t;
-
-	t = *u;
-	*u = *v;
-	*v = t;
-}
