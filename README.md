@@ -1,11 +1,12 @@
 # Gitee_C_Learning_Project
 
 你好，欢迎来到FibreCase的C语言代码学习仓库  
+仓库代码已经转入CLion编辑  
 
 ### 快速链接
 
-*[C语言作业代码点我！](https://gitee.com/fibrecase/fibrecase_c_learning/blob/master/GiteeLeaningProject/histroy_code.c)*  
-*[其他习题代码点我！](https://gitee.com/fibrecase/fibrecase_c_learning/blob/master/GiteeLeaningProject/history_code_another.c)*  
+*[C语言作业代码点我！](https://gitee.com/fibrecase/fibrecase_c_learning/blob/master/histroy_code.c)*  
+*[其他习题代码点我！](https://gitee.com/fibrecase/fibrecase_c_learning/blob/master/history_code_another.c)*  
 
 ## 仓库简介
 cd ./GiteeLeaningProject  
@@ -14,8 +15,7 @@ cd ./GiteeLeaningProject
 ./main & ./test -正在构建的代码  
 ./toolkit_float & ./toolkit_int -由FibreCase开发的个人工具库，正在完善中  
   
-代码使用Visual Studio 2022编辑，编译器为MSVS  
-正在尝试转入CLion编辑，并使用MinGW编译
+代码使用CLion编辑，编译器为MinGW  
 
 ### 不知道如何使用？阅读下面的指南
 

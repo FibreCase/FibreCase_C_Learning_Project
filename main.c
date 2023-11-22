@@ -3,24 +3,26 @@
 int
 main()
 {
-	int org[2][3];
-	int sut[3][2];
+	int n;
+	int sut[11][11] = {0};
+	scanf("%d",&n);
 
-	for (int i = 0; i < 2; ++i) {
-		for (int j = 0; j < 3; ++j) {
-			scanf("%d",&org[i][j]);
+	for (int i = 1; i <= n; ++i) {
+		sut[i][1] = 1;
+		sut[i][i] = 1;
+	}
+
+	if (n >= 3) {
+		for (int i = 3; i <= n; ++i) {
+			for (int j = 2; j <= i-1; ++j) {
+				sut[i][j] = sut[i-1][j-1] + sut[i-1][j];
+			}
 		}
 	}
 
-	for (int i = 0; i < 3; ++i) {
-		for (int j = 0; j < 2; ++j) {
-			sut[i][j] = org[j][i];
-		}
-	}
-
-	for (int i = 0; i < 3; ++i) {
-		for (int j = 0; j < 2; ++j) {
-			printf("%d ",sut[i][j]);
+	for (int i = 1; i <= n; ++i) {
+		for (int j = 1; j <= i; ++j) {
+			printf("%5d ",sut[i][j]);
 		}
 		printf("\n");
 	}
