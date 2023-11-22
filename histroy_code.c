@@ -156,7 +156,7 @@ main()
 	scanf("%d", &en);
 
 	if (st >= strlen(ch) || st == 0) {
-		printf("��ʼλ��%dԽ��", st);
+		printf("起始位置%d越界", st);
 		return 0;
 	}
 	if ((st + en) >= strlen(ch))
@@ -197,12 +197,12 @@ main()
 	ch[i] = '\0';
 
 	if (k == 0) {
-		printf("�ض��ַ���%c\n", c);
-		printf("�ض��ַ�������");
+		printf("特定字符是%c\n", c);
+		printf("特定字符不存在");
 	}
 	else {
-		printf("�ض��ַ���%c\n", c);
-		printf("ɾ���ض��ַ�%c����ַ�����%s", c, ch);
+		printf("特定字符是%c\n", c);
+		printf("删除特定字符%c后的字符串是%s", c, ch);
 	}
 
 	return 0;
@@ -308,13 +308,13 @@ main()
 		for (int i = 0; i < l; ++i) {
 			printf("%d", n[i]);
 		}
-		printf("���ǻ�����");
+		printf("不是回文数");
 	}
 	else {
 		for (int i = 0; i < l; ++i) {
 			printf("%d", n[i]);
 		}
-		printf("�ǻ�����");
+		printf("是回文数");
 	}
 }
 
@@ -328,7 +328,7 @@ main()
 {
 	char ch[99];
 	gets(ch);
-	printf("�ַ���������%llu", strlen(ch));
+	printf("字符串长度是%llu", strlen(ch));
 
 	return 0;
 }
@@ -381,7 +381,7 @@ main()
 		}
 	}
 
-	printf("��д��ĸ��%d��\nСд��ĸ��%d��\n������%d��\n�ո���%d��\n�����ַ���%d��", l, s, n, b, e);
+	printf("大写字母有%d个\n小写字母有%d个\n数字有%d个\n空格有%d个\n其他字符有%d个", l, s, n, b, e);
 	return 0;
 }
 
@@ -587,7 +587,7 @@ int main()
 		}
 	}
 
-	printf("���ֵ��%d,����������λ����", max);
+	printf("最大值是%d,其在数组中位置是", max);
 
 	for (int i = 0; i < k + 1; i++)
 	{
@@ -609,13 +609,13 @@ int main()
 
 	scanf("%d", &n);
 
-	//��ֵ����
+	//赋值部分
 	for (int i = 0; i < n; i++)
 	{
 		scanf("%d", &num[i]);
 	}
 
-	//���ֵ��ֵ����
+	//最大值求值部分
 	max = num[0];
 	k = 0;
 	for (int j = 0; j < n; j++)
@@ -626,9 +626,9 @@ int main()
 			k = j;
 		}
 	}
-	printf("���ֵ%d\n���ֵ�±�%d\n", max, k);
+	printf("最大值%d\n最大值下标%d\n", max, k);
 
-	//��Сֵ��ֵ����
+	//最小值求值部分
 	min = num[0];
 	k = 0;
 	for (int j = 0; j < n; j++)
@@ -639,9 +639,9 @@ int main()
 			k = j;
 		}
 	}
-	printf("��Сֵ%d\n��Сֵ�±�%d\n", min, k);
+	printf("最小值%d\n最小值下标%d\n", min, k);
 
-	//ƽ��ֵ��ֵ����
+	//平均值求值部分
 	for (int i = 0; i < n; i++)
 	{
 		s = s + num[i];
@@ -649,7 +649,7 @@ int main()
 
 	a = (float)s / n;
 
-	printf("ƽ��ֵ%.2f\n", a);
+	printf("平均值%.2f\n", a);
 
 	return 0;
 }
@@ -674,9 +674,9 @@ int main()
 
 	a = (float)s / 8;
 
-	printf("ƽ��ֵ��%.1f\n", a);
+	printf("平均值是%.1f\n", a);
 
-	printf("���ڵ���ƽ��ֵ��Ԫ����");
+	printf("大于等于平均值的元素是");
 	for (; j < 8; j++)
 	{
 		if ((float)num[j] >= a)
@@ -789,7 +789,7 @@ int main()
 
 	r = r + hh[10];
 
-	printf("��10�����ʱ������%f��\n��10�η���%f��", r, hh[10]);
+	printf("第10次落地时共经过%f米\n第10次反弹%f米", r, hh[10]);
 
 	return 0;
 }
@@ -913,7 +913,7 @@ int main()
 
 int main()
 {
-	printf("��õ��������Ϊ3");
+	printf("最好的赛车编号为3");
 
 	return 0;
 }
@@ -1049,7 +1049,7 @@ int vrfy_268(int i)
 
 int main()
 {
-	//�ֽ�һ����
+	//分解一个数
 	int i = 2;
 	int vrfy(int);
 
@@ -1099,7 +1099,7 @@ int vrfy(int i)
 
 int main()
 {
-	//�����N���µ�ȫ����������
+	//先输出N以下的全体质数备用
 	int n, j = 0, k = 0;
 	scanf("%d", &n);
 
@@ -1115,7 +1115,7 @@ int main()
 		}
 	}
 
-	//���ڸ������ִӴ�С�����������в���
+	//对于给定数字从大到小除以质数进行测试
 	int factor[1000] = { 0 };
 	int x = n;
 	j--;
@@ -1194,7 +1194,7 @@ int main()
 			if (a * 40 + b * 30 + c * 5 == 400)
 			{
 				i++;
-				printf("��%d��:%d������,%d��Ů��,%d��С��\n", i, a, b, c);
+				printf("第%d种:%d个男人,%d个女人,%d个小孩\n", i, a, b, c);
 			}
 		}
 	}
@@ -1218,7 +1218,7 @@ int main()
 	s = r * r * pi;
 	v = s * h;
 
-	printf("Բ�ܳ�:%.2f\nԲ���:%.2f\nԲ�����:%.2f", c, s, v);
+	printf("圆周长:%.2f\n圆面积:%.2f\n圆柱体积:%.2f", c, s, v);
 
 	return 0;
 }
@@ -1232,7 +1232,7 @@ int main()
 {
 	char c1, c2, c3, c4, c5;
 	int n;
-	//ʹ������᷽��Щ��������ĿҪ��ʹ�ñ���
+	//使用数组会方便些，但是题目要求使用变量
 
 	c1 = 'C';
 	c2 = 'h';
@@ -1420,7 +1420,7 @@ int main()
 	{
 		j = (j + 1) * 2;
 	}
-	printf("���ӵ�һ��ժ��%d������", j);
+	printf("猴子第一天摘了%d个桃子", j);
 
 	return 0;
 }
@@ -1486,7 +1486,7 @@ int main()
 	{
 		if (m % i == 0 && n % i == 0)
 		{
-			printf("���Լ����%d\n", i);
+			printf("最大公约数是%d\n", i);
 			break;
 		}
 		else
@@ -1499,7 +1499,7 @@ int main()
 	{
 		if (a % m == 0 && a % n == 0)
 		{
-			printf("��С��������%d", a);
+			printf("最小公倍数是%d", a);
 			break;
 		}
 		else
@@ -1542,23 +1542,23 @@ int max(int m, int n)
 
 int main()
 {
-	char c; //�û������ַ�
-	int letters = 0, // ��ĸ��Ŀ
-		space = 0, // �ո���Ŀ
-		digit = 0, // ������Ŀ
-		others = 0; // �����ַ���Ŀ
+	char c; //用户输入字符
+	int letters = 0, // 字母数目
+		space = 0, // 空格数目
+		digit = 0, // 整数数目
+		others = 0; // 其他字符数目
 	while ((c = getchar()) != '\n')
-	{ // ÿ�ζ�ȡһ���ַ����س�ʱ����
+	{ // 每次读取一个字符，回车时结束
 		if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-			letters++;//��ĸ��1
+			letters++;//字母＋1
 		else if (c == ' ')
-			space++;//�ո�+1
+			space++;//空格+1
 		else if (c >= '0' && c <= '9')
-			digit++;//����+1
+			digit++;//数字+1
 		else
-			others++;//����+1
+			others++;//其他+1
 	}
-	printf("��ĸ��:%d\n�ո���:%d\n������:%d\n�����ַ���:%d\n\n", letters, space, digit, others);
+	printf("字母数:%d\n空格数:%d\n数字数:%d\n其它字符数:%d\n\n", letters, space, digit, others);
 
 	return 0;
 }
@@ -1622,7 +1622,7 @@ int main()
 		mon = inter * 0.1 + mon;
 	}
 
-	printf("������%.2f", mon);
+	printf("奖金是%.2f", mon);
 	return 0;
 }
 
@@ -1638,11 +1638,11 @@ int main()
 	scanf("%f,%f", &x, &y);
 	if (fabs(fabs(x) - 2) < 1 && fabs(fabs(y) - 2) < 1)
 	{
-		printf("�õ�߶�Ϊ10��");
+		printf("该点高度为10米");
 	}
 	else
 	{
-		printf("�õ�߶�Ϊ0��");
+		printf("该点高度为0米");
 	}
 
 	return 0;
@@ -1659,31 +1659,31 @@ int main()
 	scanf("%f%f", &x, &y);
 	if (x == 0 && y == 0)
 	{
-		printf("(%.2f,%.2f)��ԭ��", x, y);
+		printf("(%.2f,%.2f)是原点", x, y);
 	}
 	else if (x == 0)
 	{
-		printf("(%.2f,%.2f)��y��������", x, y);
+		printf("(%.2f,%.2f)在y坐标轴上", x, y);
 	}
 	else if (y == 0)
 	{
-		printf("(%.2f,%.2f)��x��������", x, y);
+		printf("(%.2f,%.2f)在x坐标轴上", x, y);
 	}
 	else if (x > 0 && y > 0)
 	{
-		printf("(%.2f,%.2f)�ڵ�һ����", x, y);
+		printf("(%.2f,%.2f)在第一象限", x, y);
 	}
 	else if (x < 0 && y > 0)
 	{
-		printf("(%.2f,%.2f)�ڵڶ�����", x, y);
+		printf("(%.2f,%.2f)在第二象限", x, y);
 	}
 	else if (x < 0 && y < 0)
 	{
-		printf("(%.2f,%.2f)�ڵ�������", x, y);
+		printf("(%.2f,%.2f)在第三象限", x, y);
 	}
 	else if (x > 0 && y < 0)
 	{
-		printf("(%.2f,%.2f)�ڵ�������", x, y);
+		printf("(%.2f,%.2f)在第四象限", x, y);
 	}
 
 	return 0;
@@ -1703,22 +1703,22 @@ int main()
 	{
 		switch ((int)grade / 10)
 		{
-		default:printf("�ɼ���%.1f,��Ӧ�ĵȼ���E", grade);
+		default:printf("成绩是%.1f,相应的等级是E", grade);
 			break;
 		case 10:
 		case 9:
-			printf("�ɼ���%.1f,��Ӧ�ĵȼ���A", grade); break;
+			printf("成绩是%.1f,相应的等级是A", grade); break;
 		case 8:
-			printf("�ɼ���%.1f,��Ӧ�ĵȼ���B", grade); break;
+			printf("成绩是%.1f,相应的等级是B", grade); break;
 		case 7:
-			printf("�ɼ���%.1f,��Ӧ�ĵȼ���C", grade); break;
+			printf("成绩是%.1f,相应的等级是C", grade); break;
 		case 6:
-			printf("�ɼ���%.1f,��Ӧ�ĵȼ���D", grade); break;
+			printf("成绩是%.1f,相应的等级是D", grade); break;
 		}
 	}
 	else
 	{
-		printf("����ɼ�����");
+		printf("输入成绩有误");
 	}
 	return 0;
 }
@@ -1728,11 +1728,11 @@ int main()
 
 //************************************************************************************************************************
 
-//3.2.1֮ǰ����ҵ���������ʷ������
+//3.2.1之前的作业在下面的历史代码中
 
 //************************************************************************************************************************
 
-//��ʷ���밴ʱ����������
+//历史代码按时间正序排列
 
 //************************************************************************************************************************
 #define _CRT_SECURE_NO_WARNINGS
@@ -1746,9 +1746,9 @@ int main()
 	scanf("%f%f", &m, &n);
 	if (m > 200 && m < 300 && n>0 && n < 100)
 	{
-		x = n / 1000 * m;//�˴���1000��Ϊ�˺ͺ����*10��Ӧ
+		x = n / 1000 * m;//此处的1000是为了和后面的*10呼应
 	}
-	//������ȡʮλ����roundffȡ���Ǹ�λ��������/10
+	//由于是取十位，而roundff取的是个位，所以先/10
 	rst = roundff(x);
 	printf("%d\n", rst * 10);
 	return 0;
@@ -1767,7 +1767,7 @@ int roundff(float xx)
 	{
 		z = floor(xx);
 	}
-	return z;//����ļ�Ϊ��xxȡ��Ľ��
+	return z;//输出的即为对xx取后的结果
 }
 
 
@@ -1862,9 +1862,9 @@ int main()
 	scanf("%f%f", &m, &n);
 	if (m > 200 && m < 300 && n>0 && n < 100)
 	{
-		x = n / 1000 * m;//�˴���1000��Ϊ�˺ͺ����*10��Ӧ
+		x = n / 1000 * m;//此处的1000是为了和后面的*10呼应
 	}
-	//������ȡʮλ����roundffȡ���Ǹ�λ��������/10
+	//由于是取十位，而roundff取的是个位，所以先/10
 	rst = roundff(x);
 	printf("%d\n", rst * 10);
 	return 0;
@@ -1883,7 +1883,7 @@ int roundff(float xx)
 	{
 		z = floor(xx);
 	}
-	return z;//����ļ�Ϊ��xxȡ��Ľ��
+	return z;//输出的即为对xx取后的结果
 }
 
 //**************************************************************
@@ -1896,11 +1896,11 @@ int main()
 	scanf("%d", &a);
 	if (a % 2 == 0)
 	{
-		printf("%d�Ǹ�ż��", a);
+		printf("%d是个偶数", a);
 	}
 	else
 	{
-		printf("%d�Ǹ�����", a);
+		printf("%d是个奇数", a);
 	}
 	return 0;
 }
@@ -1917,22 +1917,22 @@ int main()
 	{
 		if (a % 400 == 0)
 		{
-			printf("%d��������", a);
+			printf("%d年是闰年", a);
 		}
 		else
 		{
-			printf("%d�겻������", a);
+			printf("%d年不是闰年", a);
 		}
 	}
 	else
 	{
 		if (a % 4 == 0)
 		{
-			printf("%d��������", a);
+			printf("%d年是闰年", a);
 		}
 		else
 		{
-			printf("%d�겻������", a);
+			printf("%d年不是闰年", a);
 		}
 	}
 	return 0;
@@ -1951,7 +1951,7 @@ int main()
 		m = b;
 	if (c >= m)
 		m = c;
-	printf("�������%d", m);
+	printf("最大数是%d", m);
 	return 0;
 }
 
@@ -1976,7 +1976,7 @@ int main()
 	}
 	else
 	{
-		printf("����������");
+		printf("不是三角形");
 	}
 
 	return 0;
@@ -2012,7 +2012,7 @@ int main()
 		}
 	}
 
-	printf("����������:%d,%d,%d,%d", ss[0], ss[1], ss[2], ss[3]);
+	printf("排序结果如下:%d,%d,%d,%d", ss[0], ss[1], ss[2], ss[3]);
 	return 0;
 }
 
@@ -2027,18 +2027,18 @@ int main()
 	if (a + b > c && b + c > a && c + a > b)
 	{
 		if (fabs(a * a + b * b - c * c) <= 0.000001 && a != b || fabs(a * a + c * c - b * b) <= 0.000001 && a != c || fabs(b * b + c * c - a * a) <= 0.000001 && b != c)
-			printf("ֱ��������");
+			printf("直角三角形");
 		else if (fabs(a - b) <= 0.000001 && fabs(b - c) <= 0.000001 && fabs(a - c) <= 0.000001)
-			printf("�ȱ�������");
+			printf("等边三角形");
 		else if (fabs(a - b) <= 0.000001 && a != c && (a * a + b * b) != c * c || fabs(b - c) <= 0.000001 && b != a && (b * b + c * c) != a * a || fabs(a - c) <= 0.000001 && a != b && (a * a + c * c) != b * b)
-			printf("����������");
+			printf("等腰三角形");
 		else if (fabs(a - b) <= 0.000001 && a != c && fabs(a * a + b * b - c * c) <= 0.000001 || fabs(b - c) <= 0.000001 && b != a && fabs(b * b + c * c - a * a) <= 0.000001 || fabs(a - c) <= 0.000001 && a != b && fabs(a * a + c * c - b * b) <= 0.000001)
-			printf("����ֱ��������");
+			printf("等腰直角三角形");
 		else
-			printf("һ��������");
+			printf("一般三角形");
 	}
 	else
-		printf("����������");
+		printf("不是三角形");
 	return 0;
 }
 
