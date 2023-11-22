@@ -1,7 +1,7 @@
 # Gitee_C_Learning_Project
 
 你好，欢迎来到FibreCase的C语言代码学习仓库  
-仓库代码已经转入CLion编辑  
+仓库代码已经转入CLion编辑,原先由VS创建的项目在MSVS分支中    
 
 ### 快速链接
 
