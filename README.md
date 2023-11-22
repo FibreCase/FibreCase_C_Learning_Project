@@ -9,13 +9,12 @@
 *[其他习题代码点我！](https://gitee.com/fibrecase/fibrecase_c_learning/blob/master/history_code_another.c)*  
 
 ## 仓库简介
-cd ./GiteeLeaningProject  
 ./history_code_another -来自同学、试题中的一些问题的代码  
 ./history_code -来自作业题目的代码  
-./main & ./test -正在构建的代码  
-./toolkit_float & ./toolkit_int -由FibreCase开发的个人工具库，正在完善中  
+./main & ./test -正在构建的代码   
   
 代码使用CLion编辑，编译器为MinGW  
+文本编码UTF-8  
 
 ### 不知道如何使用？阅读下面的指南
 
