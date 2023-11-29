@@ -1,3 +1,19 @@
+//7.1.10
+int fun(int * aa,int n, int y) {
+	for (int i = 0; i < n-1; ++i) {
+		if (aa[i] == y) {
+			for (int j = i; j < n-1; ++j) {
+				aa[j] = aa[j+1];
+			}
+			if (aa[n-1] == y)
+				n--;
+			n--;
+			i--;
+		}
+	}
+	return n;
+}
+
 //7.1.9
 long compose(long number) {
 	char n[999];
