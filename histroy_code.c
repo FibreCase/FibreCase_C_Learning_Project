@@ -1,3 +1,76 @@
+//7.1.4
+//过于简单
+int add(int a,int b) {
+	int s;
+	s = a+b;
+	return s;
+}
+
+int sub(int a,int b) {
+	int s;
+	s = a-b;
+	return s;
+}
+
+//7.1.3
+void convert(int n) {
+	char s[999];
+	char ss[999];
+	int i = 0, j = 0;
+	sprintf(s,"%d",n);
+	for (; i < (sizeof s) / 2; ++i, ++j) {
+		ss[i] = s[j];
+		ss[++i] = '*';
+	}
+	printf("%s",ss);
+}
+
+//7.1.2
+//这道题可以不使用指针的方法，直接返回新数列是可以的
+void concatenate(const char * s1, const char * s2, char * s) {
+	int i = 0, j = 0;
+	while (*(s1 + i) != '\0') {
+		*(s + j) = *(s1 + i);
+		i++,j++;
+	}
+
+	i = 0;
+	while (*(s2 + i) != '\0') {
+		*(s + j) = *(s2 + i);
+		i++,j++;
+	}
+
+	//由于子函数不会自动添加结尾
+	//所以我们需要手动添加一个结尾
+	*(s + j) = '\0';
+}
+
+//7.1.1
+int prime(int n)
+{
+	int t = 0;
+	if (n == 2) {
+		return 1;
+	}
+	else if (n ==1) {
+		return 0;
+	}
+	else {
+		for (int i = 2; i < n; ++i) {
+			if (n%i==0) {
+				t = 1;
+				break;
+			}
+		}
+		if (t == 1) {
+			return 0;
+		}
+		else {
+			return 1;
+		}
+	}
+}
+
 //6.3.5
 #include <stdio.h>
 
