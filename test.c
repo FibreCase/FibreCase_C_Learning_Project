@@ -1,35 +1,17 @@
 #include<stdio.h>
-int
-main()
-{
-	int m, n, a, b, d, e, t = 0;
-	d = 0;
-	scanf("%d %d", &m, &n);
-	if (m > n) {
-		e = m;
-		m = n;
-		n = e;
+
+int main() {
+	char str[999] = "abcdabcdabcdabcdabcdaAAAAAAaaaaaaaaa";
+	int count[999] = {0};
+	for (int i = 0; i < (sizeof str); ++i) {
+		if (*(str + i) >= 'A' && *(str + i) <= 'Z') {
+			(*(count + str[i] - 65))++;
+		}
+		else if (*(str + i) >= 'a' && *(str + i) <= 'z') {
+			(*(count + str[i] - 97))++;
+		}
 	}
-	for (a = m + 1; a <= n; a++) {
-		for (b = 2; b < a; b++) {
-			if (a % b == 0){
-				t = 1;
-				break;
-			}
-		}
 
-		if (t == 1) {
-			t = 0;
-			continue;
-		}
 
-		if (a == b) {
-			printf("%5d", a);
-			d++;
-			if (d % 5 == 0)
-				printf("\n");
-		}
-
-	}
 	return 0;
 }

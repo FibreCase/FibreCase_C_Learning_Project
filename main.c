@@ -1,45 +1,29 @@
 #include <stdio.h>
 
-int min(int a, int b) {
-	int min;
-	min = a;
-	if (b < min) {
-		min = b;
+long compose(long number);
+
+int main() {
+	long int n;
+	scanf("%ld", &n);
+	printf("%ld\n", compose(n));
+	return 0;
+}
+
+long compose(long number) {
+	char n[999];
+	char s[999] = {0};
+	long int su;
+	sprintf(n, "%ld", number);
+
+	for (int i = 0, j = 0; i < 999; ++i) {
+		if (*(n + i) == '\0') {
+			break;
+		}
+		else if (*(n + i) % 2 == 0) {
+			*(s + j++) = *(n + i);
+		}
 	}
-	return min;
+
+	sscanf(s,"%ld", &su);
+	return su;
 }
-
-int max(int a, int b) {
-	int max;
-	max = a;
-	if (b > max) {
-		max = b;
-	}
-	return max;
-}
-
-int hcf(int a,int b) {
-	int s =1;
-	for (int i = min(a,b) -1; i > 1; --i) {
-		if (a%i == 0 && b %i ==0)
-			s = i;
-	}
-
-	return s;
-}
-
-int lcd(int a,int b) {
-	int s =max;
-
-
-	return s;
-}
-
-
-
-
-int main()
-{
-
-}
-
