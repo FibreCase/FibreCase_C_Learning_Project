@@ -12,10 +12,10 @@ int main() {
 	float weight[4] = {0};
 	char c;
 	printf("************************\n");
-	printf("FibreCaseçš„åŒ–å­¦æ–¹ç¨‹è®¡ç®—å™¨\n");
-	printf("\n");
+	printf("FibreCaseµÄ»¯Ñ§·½³Ì¼ÆËãÆ÷\n");
+	printf("https://gitee.com/fibrecase/fibrecase_c_learning/blob/master/SubProjects/ChemCalu.c\n");
 	printf("************************\n");
-	printf("ä½¿ç”¨è¯´æ˜ï¼š\nä»»æ„ä½ç½®è¾“å…¥qä»¥é€€å‡º\nè¾“å…¥cä»¥é‡ç½®\nè¾“å…¥æ•°å­—å³å¯æ‰§è¡Œ\n");
+	printf("Ê¹ÓÃËµÃ÷£º\nÈÎÒâÎ»ÖÃÊäÈëqÒÔÍË³ö\nÊäÈëcÒÔÖØÖÃ\nÊäÈëÊı×Ö¼´¿ÉÖ´ĞĞ\n");
 	printf("************************\n");
 
 	while (1) {
@@ -29,9 +29,11 @@ int main() {
 
 		//output
 		for (int i = 0; i < 4; ++i) {
-			printf("ç¬¬%dä¸ªç‰©è´¨çš„è´¨é‡æ˜¯:",i+1);
+			printf("µÚ%d¸öÎïÖÊµÄÖÊÁ¿ÊÇ:",i+1);
 			printf("%.6f\n\n", *(weight + i));
 		}
+		printf("************************\n");
+		printf("ÈÎÒâÎ»ÖÃÊäÈëqÒÔÍË³ö¡¢ÊäÈëcÒÔÖØÖÃ\nÊäÈëÊı×Ö¼´¿ÉÖ´ĞĞ¼ÆËã\n");
 		printf("************************\n");
 
 		//end code
@@ -50,13 +52,13 @@ int main() {
 void init(float * ele, float * ratio, float * weight) {
 	//init the ele Ar
 	for (int i = 0; i < 4; ++i) {
-		printf("è¾“å…¥ç¬¬%dä¸ªç‰©è´¨ç›¸å¯¹è´¨é‡:",i+1);
+		printf("ÊäÈëµÚ%d¸öÎïÖÊÏà¶ÔÖÊÁ¿:",i+1);
 		scanf("%f", (ele+i));
 	}
 	printf("************************\n");
 	//init the ratio of every element
 	for (int i = 0; i < 3; ++i) {
-		printf("è¾“å…¥ç¬¬%dä¸ªç‰©è´¨çš„æ¯”ä¾‹ç³»æ•°:",i+1);
+		printf("ÊäÈëµÚ%d¸öÎïÖÊµÄ±ÈÀıÏµÊı:",i+1);
 		scanf("%f", (ratio+i));
 	}
 	for (int i = 0; i < 3; ++i) {
@@ -64,7 +66,7 @@ void init(float * ele, float * ratio, float * weight) {
 	}
 	*(ratio + 3) = *(ratio + 3) * 1.1;
 	printf("************************\n");
-	printf("è¾“å…¥ç¬¬1ä¸ªç‰©è´¨çš„åˆå§‹è´¨é‡:");
+	printf("ÊäÈëµÚ1¸öÎïÖÊµÄ³õÊ¼ÖÊÁ¿:");
 	scanf("%f", weight);
 }
 
