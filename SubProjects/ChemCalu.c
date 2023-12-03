@@ -1,5 +1,6 @@
 //Copyrights by FibreCase, 2023
 //Licences of GNU General Public License v3.0
+//ver 1.0
 
 #include <stdio.h>
 
@@ -12,29 +13,25 @@ int main() {
 	float weight[4] = {0};
 	char c;
 	printf("************************\n");
-	printf("FibreCase的化学方程计算器\n");
+	printf("FibreCase的化学方程计算器\n源码仓库链接:\n");
 	printf("https://gitee.com/fibrecase/fibrecase_c_learning/blob/master/SubProjects/ChemCalu.c\n");
 	printf("************************\n");
-	printf("使用说明：\n任意位置输入q以退出\n输入c以重置\n输入数字即可执行\n");
+	printf("使用说明：\n任意位置输入q以退出\n\t输入c以重置\n\t输入数字即可执行\n");
 	printf("************************\n");
 
 	while (1) {
-
-
-
 		init(ele,ratio,weight);
 		calu(ele,ratio,weight);
 
-		printf("\n*********Result*********\n");
-
 		//output
+		printf("\n*********Result*********\n\n");
 		for (int i = 0; i < 4; ++i) {
 			printf("第%d个物质的质量是:",i+1);
 			printf("%.6f\n\n", *(weight + i));
 		}
 		printf("************************\n");
 		printf("任意位置输入q以退出、输入c以重置\n输入数字即可执行计算\n");
-		printf("************************\n");
+		printf("******输入已重置******\n");
 
 		//end code
 		scanf("%c",&c);

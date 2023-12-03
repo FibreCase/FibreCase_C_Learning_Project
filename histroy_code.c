@@ -1,3 +1,245 @@
+//7.2b.6
+void del_samechar(char * str) {
+	char c;
+	for (int i = 0; i < strlen(str);) {
+		if (str[i] == str[i+1]) {
+			c = str[i];
+			while (str[i] == c) {
+				for (int j = i; j < strlen(str); ++j) {
+				str[j] = str[j+1];
+				}
+			}
+		}
+		else {
+			i++;
+		}
+	}
+}
+
+//7.2b.5
+int fun(long n) {
+	char c[999];
+	int i = 0, t = 1;
+	sprintf(c, "%ld", n);
+
+	for (; i < 999; ++i) {
+		if (c[i] == '\0') {
+			break;
+		}
+	}
+
+	for (int k = 0; k < i-1; ++k) {
+		if (c[i-k-1] != c[k]) {
+			t = 0;
+		}
+	}
+
+	return t;
+}
+
+//7.2b.4
+//这道题我没有按照提示使用math.h
+#include<stdio.h>
+
+void convert(int n) {
+	char c[99], s[99];
+	sprintf(c,"%d",n);
+
+	for (int i = 0,j = 0; i < 99; ++i) {
+		if (c[j] != '\0') {
+			s[i] = c[j++];
+			s[++i] = '*';
+		}
+		else {
+			s[i] = '\0';
+			break;
+		}
+	}
+
+	printf("%s",s);
+}
+
+int main() {
+	int number;
+	scanf("%d", &number);
+	putchar('*');
+	convert(number);
+	printf("\n");
+}
+
+
+//7.2b.3
+int sumday(int y, int m, int d) {
+	int mouth_day[] = {31,28,31,30,31,30,31,31,30,31,30,31};
+	int sum = 0;
+	for (int i = 0; i < m-1; ++i) {
+		sum += mouth_day[i];
+	}
+	sum += d;
+	if ((y % 4 ==0 && y % 400 != 0) && m >=2) {
+		sum += 1;
+	}
+
+	return sum;
+}
+
+//7.2b.2
+#include<stdio.h>
+#include<string.h>
+
+void sort(char str[]);
+
+int main() {
+	char str[80];
+	scanf("%s", str);
+	sort(str);
+	printf("%s\n", str);
+}
+
+void sort(char str[]) {
+	char c;
+	int n = 0;
+	for (; n < 80; ++n) {
+		if (str[n] == '\0') {
+			break;
+		}
+	}
+
+	for (int i = 0; i < n; ++i) {
+		for (int j = 0; j < n - i - 1; ++j) {
+			if (str[j] > str[j+1]) {
+				c = str[j];
+				str[j] = str[j+1];
+				str[j+1] = c;
+			}
+		}
+	}
+}
+
+//7.2b.1
+#include <stdio.h>
+
+int max_same(float a[][6], int n);
+
+int main(void) {
+	float aa[6][6];
+	int i, j, n;
+	scanf("%d", &n);
+
+	for (i = 0; i < n; i++)
+		for (j = 0; j < n; j++)
+			scanf("%f", &aa[i][j]);
+
+	if (max_same(&aa, n))
+		printf("YES\n");
+	else
+		printf("NO\n");
+}
+
+int max_same(float a[][6], int n) {
+	float max[n];
+	int t = 1;
+	for (int i = 0; i < n; ++i) {
+		max[i] = *(*(a + i));
+		for (int j = 0; j < n - 1; ++j) {
+			if (*(*(a + i) + j + 1) > *(*(a + i) + j)) {
+				max[i] = *(*(a + i) + j + 1);
+			}
+		}
+	}
+	for (int i = 0; i < n-1; ++i) {
+		if (max[i] != max[i+1]) {
+			t = 0;
+		}
+	}
+
+	return t;
+}
+
+//7.2.2
+#include <stdio.h>
+
+int prime(int n);
+
+int main() {
+	int m;
+
+	scanf("%d", &m);
+	for (int i = 2; i < m / 2 + 1; ++i) {
+		if (prime(i) == 1 && prime(m - i) == 1) {
+			printf("%d=%d+%d\n", m, i, m - i);
+		}
+	}
+
+	return 0;
+}
+
+int prime(int n) {
+	int t = 0;
+	if (n == 2) {
+		return 1;
+	}
+	else if (n == 1) {
+		return 0;
+	}
+	else {
+		for (int i = 2; i < n; ++i) {
+			if (n % i == 0) {
+				t = 1;
+				break;
+			}
+		}
+		if (t == 1) {
+			return 0;
+		}
+		else {
+			return 1;
+		}
+	}
+}
+
+//7.2.1
+#include <stdio.h>
+
+int prime(int n);
+
+int main() {
+	int m, n;
+
+	scanf("%d%d", &m, &n);
+	for (int i = m; i < n - 1; ++i) {
+		if (prime(i) == 1 && prime(i + 2) == 1) {
+			printf("[%d,%d]\n", i, i + 2);
+		}
+	}
+
+	return 0;
+}
+
+int prime(int n) {
+	int t = 0;
+	if (n == 2) {
+		return 1;
+	}
+	else if (n == 1) {
+		return 0;
+	}
+	else {
+		for (int i = 2; i < n; ++i) {
+			if (n % i == 0) {
+				t = 1;
+				break;
+			}
+		}
+		if (t == 1) {
+			return 0;
+		}
+		else {
+			return 1;
+		}
+	}
+}
+
 //7.1.10
 int fun(int * aa,int n, int y) {
 	for (int i = 0; i < n-1; ++i) {
