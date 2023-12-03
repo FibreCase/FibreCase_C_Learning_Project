@@ -1,3 +1,160 @@
+//7.2b.13
+#include<stdio.h>
+#include "string.h"
+
+void nixu(char * str) {
+	char slt[100];
+	int i = 0;
+	strcpy(slt,str);
+	for (; i < strlen(slt) ; ++i) {
+		str[strlen(slt) - i -1] =  slt[i];
+	}
+}
+
+int main(void) {
+	char str[100];
+	gets(str);
+	nixu(str);
+	puts(str);
+}
+
+//7.2b.12
+int fun(int m, int n, int k) {
+	char mm[99], nn[99];
+	int t = 1;
+	sprintf(mm, "%d",m);
+	sprintf(nn,"%d",n);
+
+	for (int i = 0; i < k; ++i) {
+		if (mm[i] != nn[i]) {
+			t = 0;
+			break;
+		}
+	}
+
+	return t;
+}
+
+//7.2b.11
+//åˆæ˜¯åŸé¢˜
+#include <stdio.h>
+
+int prime(int n);
+
+int main() {
+	int m, n;
+
+	scanf("%d%d", &m, &n);
+	for (int i = m; i < n - 1; ++i) {
+		if (prime(i) == 1 && prime(i + 2) == 1) {
+			printf("[%d,%d] ", i, i + 2);
+		}
+	}
+
+	return 0;
+}
+
+int prime(int k) {
+	int t = 0;
+	if (k == 2) {
+		return 1;
+	}
+	else if (k == 1) {
+		return 0;
+	}
+	else {
+		for (int i = 2; i < k; ++i) {
+			if (k % i == 0) {
+				t = 1;
+				break;
+			}
+		}
+		if (t == 1) {
+			return 0;
+		}
+		else {
+			return 1;
+		}
+	}
+}
+
+
+//7.2b.10
+//åŸé¢˜ å»çœ‹>7.2b.2
+void sortchar(char str[]) {
+	char c;
+	int n = 0;
+	for (; n < 80; ++n) {
+		if (str[n] == '\0') {
+			break;
+		}
+	}
+
+	for (int i = 0; i < n; ++i) {
+		for (int j = 0; j < n - i - 1; ++j) {
+			if (str[j] > str[j+1]) {
+				c = str[j];
+				str[j] = str[j+1];
+				str[j+1] = c;
+			}
+		}
+	}
+}
+
+//7.2b.9
+//å¤ªè‰°éš¾
+int substring(char *s, char *sub) {
+	//record the str length
+	int i = 0, j = 0, t = -1;
+	for (; i < 100; ++i) {
+		if (sub[i] == '\0') {
+			break;
+		}
+	}
+	for (; j < 100; ++j) {
+		if (s[j] == '\0') {
+			break;
+		}
+	}
+
+	if (j < i) {
+		return t;
+	}
+	else {
+		for (int k = 0; k <= j - i; ++k) {
+			for (int l = 0; l < i; ++l) {
+				if ((l == i -1) && (s[k + l] == sub[l])) {
+					t = -2;
+					break;
+				}
+				else if (s[k + l] == sub[l]) {
+					continue;
+				}
+				break;
+			}
+			if (t == -2) {
+				t = k + 1;
+				break;
+			}
+		}
+		return t;
+	}
+}
+
+//7.2b.8
+void find_max(int a[][4], int n, int b[2]) {
+	int max;
+	max = a[0][0], b[0] = 0, b[1] = 0;
+	for (int i = 0; i < n; ++i) {
+		for (int j = 0; j < 4; ++j) {
+			if (a[i][j] > max) {
+				max = a[i][j];
+				b[0]= i, b[1]= j;
+			}
+		}
+	}
+}
+
 //7.2b.7
 #include<stdio.h>
 
@@ -69,7 +226,7 @@ int fun(long n) {
 }
 
 //7.2b.4
-//ÕâµÀÌâÎÒÃ»ÓĞ°´ÕÕÌáÊ¾Ê¹ÓÃmath.h
+//è¿™é“é¢˜æˆ‘æ²¡æœ‰æŒ‰ç…§æç¤ºä½¿ç”¨math.h
 #include<stdio.h>
 
 void convert(int n) {
@@ -308,7 +465,7 @@ long compose(long number) {
 }
 
 //7.1.8
-//Õâ¸öÌâÖĞiµÄÏŞÖÆÌõ¼şÎŞ·¨Ê¹ÓÃsizeof»á±¨´í£¬Î´Àí½âÔ­Òò
+//è¿™ä¸ªé¢˜ä¸­içš„é™åˆ¶æ¡ä»¶æ— æ³•ä½¿ç”¨sizeofä¼šæŠ¥é”™ï¼Œæœªç†è§£åŸå› 
 void counta_z(char *str, int *count) {
 	for (int i = 0; i < 255; ++i) {
 		if (*(str + i) >= 'A' && *(str + i) <= 'Z') {
@@ -324,7 +481,7 @@ void counta_z(char *str, int *count) {
 }
 
 //7.1.7
-//Ã°ÅİÅÅĞò£¬Í¬Ñù¿ÉÒÔÍ¨¹ıÊı×éµÄĞÎÊ½ÊµÏÖ
+//å†’æ³¡æ’åºï¼ŒåŒæ ·å¯ä»¥é€šè¿‡æ•°ç»„çš„å½¢å¼å®ç°
 void  sort(int * a,int  n) {
 	int t;
 	for (int i = 1; i <= n; ++i) {
@@ -339,7 +496,7 @@ void  sort(int * a,int  n) {
 }
 
 //7.1.6
-//ÎŞÁÄ
+//æ— èŠ
 char my_toupper(char ch) {
 	if (ch >= 'a' && ch <= 'z') {
 		ch = ch - 32;
@@ -348,7 +505,7 @@ char my_toupper(char ch) {
 }
 
 //7.1.5
-//¶àĞ´ÁËÁ½¸ö×îÖµº¯ÊıÄÃÀ´ÓÃ
+//å¤šå†™äº†ä¸¤ä¸ªæœ€å€¼å‡½æ•°æ‹¿æ¥ç”¨
 int min(int a, int b) {
 	int min;
 	min = a;
@@ -391,7 +548,7 @@ int lcd(int a,int b,int h) {
 }
 
 //7.1.4
-//¹ıÓÚ¼òµ¥
+//è¿‡äºç®€å•
 int add(int a,int b) {
 	int s;
 	s = a+b;
@@ -418,7 +575,7 @@ void convert(int n) {
 }
 
 //7.1.2
-//ÕâµÀÌâ¿ÉÒÔ²»Ê¹ÓÃÖ¸ÕëµÄ·½·¨£¬Ö±½Ó·µ»ØĞÂÊıÁĞÊÇ¿ÉÒÔµÄ
+//è¿™é“é¢˜å¯ä»¥ä¸ä½¿ç”¨æŒ‡é’ˆçš„æ–¹æ³•ï¼Œç›´æ¥è¿”å›æ–°æ•°åˆ—æ˜¯å¯ä»¥çš„
 void concatenate(const char * s1, const char * s2, char * s) {
 	int i = 0, j = 0;
 	while (*(s1 + i) != '\0') {
@@ -432,8 +589,8 @@ void concatenate(const char * s1, const char * s2, char * s) {
 		i++,j++;
 	}
 
-	//ÓÉÓÚ×Óº¯Êı²»»á×Ô¶¯Ìí¼Ó½áÎ²
-	//ËùÒÔÎÒÃÇĞèÒªÊÖ¶¯Ìí¼ÓÒ»¸ö½áÎ²
+	//ç”±äºå­å‡½æ•°ä¸ä¼šè‡ªåŠ¨æ·»åŠ ç»“å°¾
+	//æ‰€ä»¥æˆ‘ä»¬éœ€è¦æ‰‹åŠ¨æ·»åŠ ä¸€ä¸ªç»“å°¾
 	*(s + j) = '\0';
 }
 
@@ -578,7 +735,7 @@ main()
 	}
 
 	for (int i = 0; i < m; ++i) {
-		printf("µÚ%dĞĞÔªËØÖ®ºÍÊÇ%d\n",i,sum[i]);
+		printf("ç¬¬%dè¡Œå…ƒç´ ä¹‹å’Œæ˜¯%d\n",i,sum[i]);
 	}
 	return 0;
 }
@@ -621,7 +778,7 @@ main()
 	scanf("%d", &en);
 
 	if (st >= strlen(ch) || st == 0) {
-		printf("ÆğÊ¼Î»ÖÃ%dÔ½½ç", st);
+		printf("èµ·å§‹ä½ç½®%dè¶Šç•Œ", st);
 		return 0;
 	}
 	if ((st + en) >= strlen(ch))
@@ -662,12 +819,12 @@ main()
 	ch[i] = '\0';
 
 	if (k == 0) {
-		printf("ÌØ¶¨×Ö·ûÊÇ%c\n", c);
-		printf("ÌØ¶¨×Ö·û²»´æÔÚ");
+		printf("ç‰¹å®šå­—ç¬¦æ˜¯%c\n", c);
+		printf("ç‰¹å®šå­—ç¬¦ä¸å­˜åœ¨");
 	}
 	else {
-		printf("ÌØ¶¨×Ö·ûÊÇ%c\n", c);
-		printf("É¾³ıÌØ¶¨×Ö·û%cºóµÄ×Ö·û´®ÊÇ%s", c, ch);
+		printf("ç‰¹å®šå­—ç¬¦æ˜¯%c\n", c);
+		printf("åˆ é™¤ç‰¹å®šå­—ç¬¦%cåçš„å­—ç¬¦ä¸²æ˜¯%s", c, ch);
 	}
 
 	return 0;
@@ -773,13 +930,13 @@ main()
 		for (int i = 0; i < l; ++i) {
 			printf("%d", n[i]);
 		}
-		printf("²»ÊÇ»ØÎÄÊı");
+		printf("ä¸æ˜¯å›æ–‡æ•°");
 	}
 	else {
 		for (int i = 0; i < l; ++i) {
 			printf("%d", n[i]);
 		}
-		printf("ÊÇ»ØÎÄÊı");
+		printf("æ˜¯å›æ–‡æ•°");
 	}
 }
 
@@ -793,7 +950,7 @@ main()
 {
 	char ch[99];
 	gets(ch);
-	printf("×Ö·û´®³¤¶ÈÊÇ%llu", strlen(ch));
+	printf("å­—ç¬¦ä¸²é•¿åº¦æ˜¯%llu", strlen(ch));
 
 	return 0;
 }
@@ -846,7 +1003,7 @@ main()
 		}
 	}
 
-	printf("´óĞ´×ÖÄ¸ÓĞ%d¸ö\nĞ¡Ğ´×ÖÄ¸ÓĞ%d¸ö\nÊı×ÖÓĞ%d¸ö\n¿Õ¸ñÓĞ%d¸ö\nÆäËû×Ö·ûÓĞ%d¸ö", l, s, n, b, e);
+	printf("å¤§å†™å­—æ¯æœ‰%dä¸ª\nå°å†™å­—æ¯æœ‰%dä¸ª\næ•°å­—æœ‰%dä¸ª\nç©ºæ ¼æœ‰%dä¸ª\nå…¶ä»–å­—ç¬¦æœ‰%dä¸ª", l, s, n, b, e);
 	return 0;
 }
 
@@ -1052,7 +1209,7 @@ int main()
 		}
 	}
 
-	printf("×î´óÖµÊÇ%d,ÆäÔÚÊı×éÖĞÎ»ÖÃÊÇ", max);
+	printf("æœ€å¤§å€¼æ˜¯%d,å…¶åœ¨æ•°ç»„ä¸­ä½ç½®æ˜¯", max);
 
 	for (int i = 0; i < k + 1; i++)
 	{
@@ -1074,13 +1231,13 @@ int main()
 
 	scanf("%d", &n);
 
-	//¸³Öµ²¿·Ö
+	//èµ‹å€¼éƒ¨åˆ†
 	for (int i = 0; i < n; i++)
 	{
 		scanf("%d", &num[i]);
 	}
 
-	//×î´óÖµÇóÖµ²¿·Ö
+	//æœ€å¤§å€¼æ±‚å€¼éƒ¨åˆ†
 	max = num[0];
 	k = 0;
 	for (int j = 0; j < n; j++)
@@ -1091,9 +1248,9 @@ int main()
 			k = j;
 		}
 	}
-	printf("×î´óÖµ%d\n×î´óÖµÏÂ±ê%d\n", max, k);
+	printf("æœ€å¤§å€¼%d\næœ€å¤§å€¼ä¸‹æ ‡%d\n", max, k);
 
-	//×îĞ¡ÖµÇóÖµ²¿·Ö
+	//æœ€å°å€¼æ±‚å€¼éƒ¨åˆ†
 	min = num[0];
 	k = 0;
 	for (int j = 0; j < n; j++)
@@ -1104,9 +1261,9 @@ int main()
 			k = j;
 		}
 	}
-	printf("×îĞ¡Öµ%d\n×îĞ¡ÖµÏÂ±ê%d\n", min, k);
+	printf("æœ€å°å€¼%d\næœ€å°å€¼ä¸‹æ ‡%d\n", min, k);
 
-	//Æ½¾ùÖµÇóÖµ²¿·Ö
+	//å¹³å‡å€¼æ±‚å€¼éƒ¨åˆ†
 	for (int i = 0; i < n; i++)
 	{
 		s = s + num[i];
@@ -1114,7 +1271,7 @@ int main()
 
 	a = (float)s / n;
 
-	printf("Æ½¾ùÖµ%.2f\n", a);
+	printf("å¹³å‡å€¼%.2f\n", a);
 
 	return 0;
 }
@@ -1139,9 +1296,9 @@ int main()
 
 	a = (float)s / 8;
 
-	printf("Æ½¾ùÖµÊÇ%.1f\n", a);
+	printf("å¹³å‡å€¼æ˜¯%.1f\n", a);
 
-	printf("´óÓÚµÈÓÚÆ½¾ùÖµµÄÔªËØÊÇ");
+	printf("å¤§äºç­‰äºå¹³å‡å€¼çš„å…ƒç´ æ˜¯");
 	for (; j < 8; j++)
 	{
 		if ((float)num[j] >= a)
@@ -1254,7 +1411,7 @@ int main()
 
 	r = r + hh[10];
 
-	printf("µÚ10´ÎÂäµØÊ±¹²¾­¹ı%fÃ×\nµÚ10´Î·´µ¯%fÃ×", r, hh[10]);
+	printf("ç¬¬10æ¬¡è½åœ°æ—¶å…±ç»è¿‡%fç±³\nç¬¬10æ¬¡åå¼¹%fç±³", r, hh[10]);
 
 	return 0;
 }
@@ -1378,7 +1535,7 @@ int main()
 
 int main()
 {
-	printf("×îºÃµÄÈü³µ±àºÅÎª3");
+	printf("æœ€å¥½çš„èµ›è½¦ç¼–å·ä¸º3");
 
 	return 0;
 }
@@ -1514,7 +1671,7 @@ int vrfy_268(int i)
 
 int main()
 {
-	//·Ö½âÒ»¸öÊı
+	//åˆ†è§£ä¸€ä¸ªæ•°
 	int i = 2;
 	int vrfy(int);
 
@@ -1564,7 +1721,7 @@ int vrfy(int i)
 
 int main()
 {
-	//ÏÈÊä³öNÒÔÏÂµÄÈ«ÌåÖÊÊı±¸ÓÃ
+	//å…ˆè¾“å‡ºNä»¥ä¸‹çš„å…¨ä½“è´¨æ•°å¤‡ç”¨
 	int n, j = 0, k = 0;
 	scanf("%d", &n);
 
@@ -1580,7 +1737,7 @@ int main()
 		}
 	}
 
-	//¶ÔÓÚ¸ø¶¨Êı×Ö´Ó´óµ½Ğ¡³ıÒÔÖÊÊı½øĞĞ²âÊÔ
+	//å¯¹äºç»™å®šæ•°å­—ä»å¤§åˆ°å°é™¤ä»¥è´¨æ•°è¿›è¡Œæµ‹è¯•
 	int factor[1000] = { 0 };
 	int x = n;
 	j--;
@@ -1659,7 +1816,7 @@ int main()
 			if (a * 40 + b * 30 + c * 5 == 400)
 			{
 				i++;
-				printf("µÚ%dÖÖ:%d¸öÄĞÈË,%d¸öÅ®ÈË,%d¸öĞ¡º¢\n", i, a, b, c);
+				printf("ç¬¬%dç§:%dä¸ªç”·äºº,%dä¸ªå¥³äºº,%dä¸ªå°å­©\n", i, a, b, c);
 			}
 		}
 	}
@@ -1683,7 +1840,7 @@ int main()
 	s = r * r * pi;
 	v = s * h;
 
-	printf("Ô²ÖÜ³¤:%.2f\nÔ²Ãæ»ı:%.2f\nÔ²ÖùÌå»ı:%.2f", c, s, v);
+	printf("åœ†å‘¨é•¿:%.2f\nåœ†é¢ç§¯:%.2f\nåœ†æŸ±ä½“ç§¯:%.2f", c, s, v);
 
 	return 0;
 }
@@ -1697,7 +1854,7 @@ int main()
 {
 	char c1, c2, c3, c4, c5;
 	int n;
-	//Ê¹ÓÃÊı×é»á·½±ãĞ©£¬µ«ÊÇÌâÄ¿ÒªÇóÊ¹ÓÃ±äÁ¿
+	//ä½¿ç”¨æ•°ç»„ä¼šæ–¹ä¾¿äº›ï¼Œä½†æ˜¯é¢˜ç›®è¦æ±‚ä½¿ç”¨å˜é‡
 
 	c1 = 'C';
 	c2 = 'h';
@@ -1885,7 +2042,7 @@ int main()
 	{
 		j = (j + 1) * 2;
 	}
-	printf("ºï×ÓµÚÒ»ÌìÕªÁË%d¸öÌÒ×Ó", j);
+	printf("çŒ´å­ç¬¬ä¸€å¤©æ‘˜äº†%dä¸ªæ¡ƒå­", j);
 
 	return 0;
 }
@@ -1951,7 +2108,7 @@ int main()
 	{
 		if (m % i == 0 && n % i == 0)
 		{
-			printf("×î´ó¹«Ô¼ÊıÊÇ%d\n", i);
+			printf("æœ€å¤§å…¬çº¦æ•°æ˜¯%d\n", i);
 			break;
 		}
 		else
@@ -1964,7 +2121,7 @@ int main()
 	{
 		if (a % m == 0 && a % n == 0)
 		{
-			printf("×îĞ¡¹«±¶ÊıÊÇ%d", a);
+			printf("æœ€å°å…¬å€æ•°æ˜¯%d", a);
 			break;
 		}
 		else
@@ -2007,23 +2164,23 @@ int max(int m, int n)
 
 int main()
 {
-	char c; //ÓÃ»§ÊäÈë×Ö·û
-	int letters = 0, // ×ÖÄ¸ÊıÄ¿
-		space = 0, // ¿Õ¸ñÊıÄ¿
-		digit = 0, // ÕûÊıÊıÄ¿
-		others = 0; // ÆäËû×Ö·ûÊıÄ¿
+	char c; //ç”¨æˆ·è¾“å…¥å­—ç¬¦
+	int letters = 0, // å­—æ¯æ•°ç›®
+		space = 0, // ç©ºæ ¼æ•°ç›®
+		digit = 0, // æ•´æ•°æ•°ç›®
+		others = 0; // å…¶ä»–å­—ç¬¦æ•°ç›®
 	while ((c = getchar()) != '\n')
-	{ // Ã¿´Î¶ÁÈ¡Ò»¸ö×Ö·û£¬»Ø³µÊ±½áÊø
+	{ // æ¯æ¬¡è¯»å–ä¸€ä¸ªå­—ç¬¦ï¼Œå›è½¦æ—¶ç»“æŸ
 		if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-			letters++;//×ÖÄ¸£«1
+			letters++;//å­—æ¯ï¼‹1
 		else if (c == ' ')
-			space++;//¿Õ¸ñ+1
+			space++;//ç©ºæ ¼+1
 		else if (c >= '0' && c <= '9')
-			digit++;//Êı×Ö+1
+			digit++;//æ•°å­—+1
 		else
-			others++;//ÆäËû+1
+			others++;//å…¶ä»–+1
 	}
-	printf("×ÖÄ¸Êı:%d\n¿Õ¸ñÊı:%d\nÊı×ÖÊı:%d\nÆäËü×Ö·ûÊı:%d\n\n", letters, space, digit, others);
+	printf("å­—æ¯æ•°:%d\nç©ºæ ¼æ•°:%d\næ•°å­—æ•°:%d\nå…¶å®ƒå­—ç¬¦æ•°:%d\n\n", letters, space, digit, others);
 
 	return 0;
 }
@@ -2087,7 +2244,7 @@ int main()
 		mon = inter * 0.1 + mon;
 	}
 
-	printf("½±½ğÊÇ%.2f", mon);
+	printf("å¥–é‡‘æ˜¯%.2f", mon);
 	return 0;
 }
 
@@ -2103,11 +2260,11 @@ int main()
 	scanf("%f,%f", &x, &y);
 	if (fabs(fabs(x) - 2) < 1 && fabs(fabs(y) - 2) < 1)
 	{
-		printf("¸Ãµã¸ß¶ÈÎª10Ã×");
+		printf("è¯¥ç‚¹é«˜åº¦ä¸º10ç±³");
 	}
 	else
 	{
-		printf("¸Ãµã¸ß¶ÈÎª0Ã×");
+		printf("è¯¥ç‚¹é«˜åº¦ä¸º0ç±³");
 	}
 
 	return 0;
@@ -2124,31 +2281,31 @@ int main()
 	scanf("%f%f", &x, &y);
 	if (x == 0 && y == 0)
 	{
-		printf("(%.2f,%.2f)ÊÇÔ­µã", x, y);
+		printf("(%.2f,%.2f)æ˜¯åŸç‚¹", x, y);
 	}
 	else if (x == 0)
 	{
-		printf("(%.2f,%.2f)ÔÚy×ø±êÖáÉÏ", x, y);
+		printf("(%.2f,%.2f)åœ¨yåæ ‡è½´ä¸Š", x, y);
 	}
 	else if (y == 0)
 	{
-		printf("(%.2f,%.2f)ÔÚx×ø±êÖáÉÏ", x, y);
+		printf("(%.2f,%.2f)åœ¨xåæ ‡è½´ä¸Š", x, y);
 	}
 	else if (x > 0 && y > 0)
 	{
-		printf("(%.2f,%.2f)ÔÚµÚÒ»ÏóÏŞ", x, y);
+		printf("(%.2f,%.2f)åœ¨ç¬¬ä¸€è±¡é™", x, y);
 	}
 	else if (x < 0 && y > 0)
 	{
-		printf("(%.2f,%.2f)ÔÚµÚ¶şÏóÏŞ", x, y);
+		printf("(%.2f,%.2f)åœ¨ç¬¬äºŒè±¡é™", x, y);
 	}
 	else if (x < 0 && y < 0)
 	{
-		printf("(%.2f,%.2f)ÔÚµÚÈıÏóÏŞ", x, y);
+		printf("(%.2f,%.2f)åœ¨ç¬¬ä¸‰è±¡é™", x, y);
 	}
 	else if (x > 0 && y < 0)
 	{
-		printf("(%.2f,%.2f)ÔÚµÚËÄÏóÏŞ", x, y);
+		printf("(%.2f,%.2f)åœ¨ç¬¬å››è±¡é™", x, y);
 	}
 
 	return 0;
@@ -2168,22 +2325,22 @@ int main()
 	{
 		switch ((int)grade / 10)
 		{
-		default:printf("³É¼¨ÊÇ%.1f,ÏàÓ¦µÄµÈ¼¶ÊÇE", grade);
+		default:printf("æˆç»©æ˜¯%.1f,ç›¸åº”çš„ç­‰çº§æ˜¯E", grade);
 			break;
 		case 10:
 		case 9:
-			printf("³É¼¨ÊÇ%.1f,ÏàÓ¦µÄµÈ¼¶ÊÇA", grade); break;
+			printf("æˆç»©æ˜¯%.1f,ç›¸åº”çš„ç­‰çº§æ˜¯A", grade); break;
 		case 8:
-			printf("³É¼¨ÊÇ%.1f,ÏàÓ¦µÄµÈ¼¶ÊÇB", grade); break;
+			printf("æˆç»©æ˜¯%.1f,ç›¸åº”çš„ç­‰çº§æ˜¯B", grade); break;
 		case 7:
-			printf("³É¼¨ÊÇ%.1f,ÏàÓ¦µÄµÈ¼¶ÊÇC", grade); break;
+			printf("æˆç»©æ˜¯%.1f,ç›¸åº”çš„ç­‰çº§æ˜¯C", grade); break;
 		case 6:
-			printf("³É¼¨ÊÇ%.1f,ÏàÓ¦µÄµÈ¼¶ÊÇD", grade); break;
+			printf("æˆç»©æ˜¯%.1f,ç›¸åº”çš„ç­‰çº§æ˜¯D", grade); break;
 		}
 	}
 	else
 	{
-		printf("ÊäÈë³É¼¨ÓĞÎó");
+		printf("è¾“å…¥æˆç»©æœ‰è¯¯");
 	}
 	return 0;
 }
@@ -2193,11 +2350,11 @@ int main()
 
 //************************************************************************************************************************
 
-//3.2.1Ö®Ç°µÄ×÷ÒµÔÚÏÂÃæµÄÀúÊ·´úÂëÖĞ
+//3.2.1ä¹‹å‰çš„ä½œä¸šåœ¨ä¸‹é¢çš„å†å²ä»£ç ä¸­
 
 //************************************************************************************************************************
 
-//ÀúÊ·´úÂë°´Ê±¼äÕıĞòÅÅÁĞ
+//å†å²ä»£ç æŒ‰æ—¶é—´æ­£åºæ’åˆ—
 
 //************************************************************************************************************************
 #define _CRT_SECURE_NO_WARNINGS
@@ -2211,9 +2368,9 @@ int main()
 	scanf("%f%f", &m, &n);
 	if (m > 200 && m < 300 && n>0 && n < 100)
 	{
-		x = n / 1000 * m;//´Ë´¦µÄ1000ÊÇÎªÁËºÍºóÃæµÄ*10ºôÓ¦
+		x = n / 1000 * m;//æ­¤å¤„çš„1000æ˜¯ä¸ºäº†å’Œåé¢çš„*10å‘¼åº”
 	}
-	//ÓÉÓÚÊÇÈ¡Ê®Î»£¬¶øroundffÈ¡µÄÊÇ¸öÎ»£¬ËùÒÔÏÈ/10
+	//ç”±äºæ˜¯å–åä½ï¼Œè€Œroundffå–çš„æ˜¯ä¸ªä½ï¼Œæ‰€ä»¥å…ˆ/10
 	rst = roundff(x);
 	printf("%d\n", rst * 10);
 	return 0;
@@ -2232,7 +2389,7 @@ int roundff(float xx)
 	{
 		z = floor(xx);
 	}
-	return z;//Êä³öµÄ¼´Îª¶ÔxxÈ¡ºóµÄ½á¹û
+	return z;//è¾“å‡ºçš„å³ä¸ºå¯¹xxå–åçš„ç»“æœ
 }
 
 
@@ -2327,9 +2484,9 @@ int main()
 	scanf("%f%f", &m, &n);
 	if (m > 200 && m < 300 && n>0 && n < 100)
 	{
-		x = n / 1000 * m;//´Ë´¦µÄ1000ÊÇÎªÁËºÍºóÃæµÄ*10ºôÓ¦
+		x = n / 1000 * m;//æ­¤å¤„çš„1000æ˜¯ä¸ºäº†å’Œåé¢çš„*10å‘¼åº”
 	}
-	//ÓÉÓÚÊÇÈ¡Ê®Î»£¬¶øroundffÈ¡µÄÊÇ¸öÎ»£¬ËùÒÔÏÈ/10
+	//ç”±äºæ˜¯å–åä½ï¼Œè€Œroundffå–çš„æ˜¯ä¸ªä½ï¼Œæ‰€ä»¥å…ˆ/10
 	rst = roundff(x);
 	printf("%d\n", rst * 10);
 	return 0;
@@ -2348,7 +2505,7 @@ int roundff(float xx)
 	{
 		z = floor(xx);
 	}
-	return z;//Êä³öµÄ¼´Îª¶ÔxxÈ¡ºóµÄ½á¹û
+	return z;//è¾“å‡ºçš„å³ä¸ºå¯¹xxå–åçš„ç»“æœ
 }
 
 //**************************************************************
@@ -2361,11 +2518,11 @@ int main()
 	scanf("%d", &a);
 	if (a % 2 == 0)
 	{
-		printf("%dÊÇ¸öÅ¼Êı", a);
+		printf("%dæ˜¯ä¸ªå¶æ•°", a);
 	}
 	else
 	{
-		printf("%dÊÇ¸öÆæÊı", a);
+		printf("%dæ˜¯ä¸ªå¥‡æ•°", a);
 	}
 	return 0;
 }
@@ -2382,22 +2539,22 @@ int main()
 	{
 		if (a % 400 == 0)
 		{
-			printf("%dÄêÊÇÈòÄê", a);
+			printf("%då¹´æ˜¯é—°å¹´", a);
 		}
 		else
 		{
-			printf("%dÄê²»ÊÇÈòÄê", a);
+			printf("%då¹´ä¸æ˜¯é—°å¹´", a);
 		}
 	}
 	else
 	{
 		if (a % 4 == 0)
 		{
-			printf("%dÄêÊÇÈòÄê", a);
+			printf("%då¹´æ˜¯é—°å¹´", a);
 		}
 		else
 		{
-			printf("%dÄê²»ÊÇÈòÄê", a);
+			printf("%då¹´ä¸æ˜¯é—°å¹´", a);
 		}
 	}
 	return 0;
@@ -2416,7 +2573,7 @@ int main()
 		m = b;
 	if (c >= m)
 		m = c;
-	printf("×î´óÊıÊÇ%d", m);
+	printf("æœ€å¤§æ•°æ˜¯%d", m);
 	return 0;
 }
 
@@ -2441,7 +2598,7 @@ int main()
 	}
 	else
 	{
-		printf("²»ÊÇÈı½ÇĞÎ");
+		printf("ä¸æ˜¯ä¸‰è§’å½¢");
 	}
 
 	return 0;
@@ -2477,7 +2634,7 @@ int main()
 		}
 	}
 
-	printf("ÅÅĞò½á¹ûÈçÏÂ:%d,%d,%d,%d", ss[0], ss[1], ss[2], ss[3]);
+	printf("æ’åºç»“æœå¦‚ä¸‹:%d,%d,%d,%d", ss[0], ss[1], ss[2], ss[3]);
 	return 0;
 }
 
@@ -2492,18 +2649,18 @@ int main()
 	if (a + b > c && b + c > a && c + a > b)
 	{
 		if (fabs(a * a + b * b - c * c) <= 0.000001 && a != b || fabs(a * a + c * c - b * b) <= 0.000001 && a != c || fabs(b * b + c * c - a * a) <= 0.000001 && b != c)
-			printf("Ö±½ÇÈı½ÇĞÎ");
+			printf("ç›´è§’ä¸‰è§’å½¢");
 		else if (fabs(a - b) <= 0.000001 && fabs(b - c) <= 0.000001 && fabs(a - c) <= 0.000001)
-			printf("µÈ±ßÈı½ÇĞÎ");
+			printf("ç­‰è¾¹ä¸‰è§’å½¢");
 		else if (fabs(a - b) <= 0.000001 && a != c && (a * a + b * b) != c * c || fabs(b - c) <= 0.000001 && b != a && (b * b + c * c) != a * a || fabs(a - c) <= 0.000001 && a != b && (a * a + c * c) != b * b)
-			printf("µÈÑüÈı½ÇĞÎ");
+			printf("ç­‰è…°ä¸‰è§’å½¢");
 		else if (fabs(a - b) <= 0.000001 && a != c && fabs(a * a + b * b - c * c) <= 0.000001 || fabs(b - c) <= 0.000001 && b != a && fabs(b * b + c * c - a * a) <= 0.000001 || fabs(a - c) <= 0.000001 && a != b && fabs(a * a + c * c - b * b) <= 0.000001)
-			printf("µÈÑüÖ±½ÇÈı½ÇĞÎ");
+			printf("ç­‰è…°ç›´è§’ä¸‰è§’å½¢");
 		else
-			printf("Ò»°ãÈı½ÇĞÎ");
+			printf("ä¸€èˆ¬ä¸‰è§’å½¢");
 	}
 	else
-		printf("²»ÊÇÈı½ÇĞÎ");
+		printf("ä¸æ˜¯ä¸‰è§’å½¢");
 	return 0;
 }
 
