@@ -1,9 +1,12 @@
 #include <stdio.h>
 
 int main() {
-	char c[999] = "I love you";;
+	int n;
+	char c[999] = "123";
 
-	printf("%d",sizeof c);
+	sscanf(c,"%d",&n);
+
+	printf("%d",n);
 
 	return 0;
 }

@@ -1,28 +1,29 @@
 #include<stdio.h>
-#include<string.h>
 
-void del_samechar(char * str);
+int reverse(int number);
 
 int main() {
-	char str[100];
-	gets(str);
-	del_samechar(str);
-	puts(str);
+	int number;
+	scanf("%d", &number);
+	printf("%d", reverse(number));
 }
 
-void del_samechar(char * str) {
-	char c;
-	for (int i = 0; i < strlen(str);) {
-		if (str[i] == str[i+1]) {
-			c = str[i];
-			while (str[i] == c) {
-				for (int j = i; j < strlen(str); ++j) {
-				str[j] = str[j+1];
-				}
-			}
-		}
-		else {
-			i++;
+int reverse(int number) {
+	char c[99],s[99];
+	int i = 0,j = 0,n=0;
+	sprintf(c,"%d",number);
+
+	for (; i < 99; ++i) {
+		if (c[i] == '\0') {
+			break;
 		}
 	}
+
+	for (; j < i; ++j) {
+		s[j] = c[i-j-1];
+	}
+	s[j] = '\0';
+
+	sscanf(s,"%d",&n);
+	return n;
 }
