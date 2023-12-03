@@ -7,6 +7,7 @@ void nixu(char * str) {
 	int i = 0;
 	strcpy(slt,str);
 	for (; i < strlen(slt) ; ++i) {
+		//这个位置上str[strlen(slt) - i -1]的-1我没有理解
 		str[strlen(slt) - i -1] =  slt[i];
 	}
 }
