@@ -265,6 +265,7 @@ int sumday(int y, int m, int d) {
 		sum += mouth_day[i];
 	}
 	sum += d;
+	//这个位置的判断存疑，但我无法修改
 	if ((y % 4 ==0 && y % 400 != 0) && m >=2) {
 		sum += 1;
 	}
