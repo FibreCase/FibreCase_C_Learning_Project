@@ -877,7 +877,6 @@ main()
 }
 
 //6.2.4
-//本题请参照@周JinRenn的写法，该方法非常烂且难以理解
 #include <stdio.h>
 #include <string.h>
 
