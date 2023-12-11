@@ -13,6 +13,11 @@ void nixu(char * str) {
 int main(void) {
 	char str[100];
 	gets(str);
+	for (int i = 0; i < 5; ++i) {
+		gets(str);
+		nixu(str);
+		puts(str);
+	}
 	nixu(str);
 	puts(str);
 }

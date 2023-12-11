@@ -1,54 +1,54 @@
-//from Íõ¶¨²Ó Å£³öÉú¼ÆÊýÎÊÌâ
+//from çŽ‹å®šç¿ ç‰›å‡ºç”Ÿè®¡æ•°é—®é¢˜
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-//ÀûÓÃµ¹¼ÆÊ±µÄÏë·¨£¬ÎªÃ¿Ò»Í·ÐÂÅ£¸³Óèµ¹¼ÆÊ±3£¬Ã¿ÂÖ-1£¬µ±µ¹¼ÆÊ±µ½0Ê±¼´ÈÏÎª
-//¸ÃÅ£¾ßÓÐ·±Ö³ÄÜÁ¦£¬ÔòÃ¿ÂÖÔÚÊý×éÄ©Î²Ìí¼ÓÒ»¸ö3£¨ÐÂÅ££©
+//åˆ©ç”¨å€’è®¡æ—¶çš„æƒ³æ³•ï¼Œä¸ºæ¯ä¸€å¤´æ–°ç‰›èµ‹äºˆå€’è®¡æ—¶3ï¼Œæ¯è½®-1ï¼Œå½“å€’è®¡æ—¶åˆ°0æ—¶å³è®¤ä¸º
+//è¯¥ç‰›å…·æœ‰ç¹æ®–èƒ½åŠ›ï¼Œåˆ™æ¯è½®åœ¨æ•°ç»„æœ«å°¾æ·»åŠ ä¸€ä¸ª3ï¼ˆæ–°ç‰›ï¼‰
 int main()
 {
-	int cow[999] = { 0 };//ÓÉÓÚÒ»Í·Å£µÄ×´Ì¬Ö»ÓÐ0-3£¬9¿ÉÓÃÓÚ¼ì²âÊý×éÓÐÒâÒå²¿·ÖÄ©Î²
+	int cow[999] = { 0 };//ç”±äºŽä¸€å¤´ç‰›çš„çŠ¶æ€åªæœ‰0-3ï¼Œ9å¯ç”¨äºŽæ£€æµ‹æ•°ç»„æœ‰æ„ä¹‰éƒ¨åˆ†æœ«å°¾
 
-	//ÓÉÓÚC99²»Ö§³Ö½«Êý×é³õÊ¼»¯ÎªÒ»¸ö·ÇÁãÖµ£¬ÔòÊÖ¶¯¸³Öµ
+	//ç”±äºŽC99ä¸æ”¯æŒå°†æ•°ç»„åˆå§‹åŒ–ä¸ºä¸€ä¸ªéžé›¶å€¼ï¼Œåˆ™æ‰‹åŠ¨èµ‹å€¼
 	for (int i = 0; i < 999; i++)
 	{
 		cow[i] = 9;
 	}
 
-	int n = 10, y = 0, a = 0;//nÎªÂÖÊý£¨ÄêÊý£©
+	int n = 10, y = 0, a = 0;//nä¸ºè½®æ•°ï¼ˆå¹´æ•°ï¼‰
 
 	cow[0] = 3;
 
-	//ÓÃÓÚ±íÊ¾ÂÖÊý
+	//ç”¨äºŽè¡¨ç¤ºè½®æ•°
 	for (int i = 0; y < n; y++)
 	{
-		//±éÀúÕû¸öÊý×é
+		//éåŽ†æ•´ä¸ªæ•°ç»„
 		while (cow[i] != 9)
 		{
-			//Îª0µÄÅ£
+			//ä¸º0çš„ç‰›
 			if (cow[i] == 0)
 			{
-				//Ñ°ÕÒÊý×éÓÐÒâÒåÄ©Î²
+				//å¯»æ‰¾æ•°ç»„æœ‰æ„ä¹‰æœ«å°¾
 				while (cow[a] != 9)
 				{
 					a++;
 				}
-				//Éú³ÉÐÂÅ£
+				//ç”Ÿæˆæ–°ç‰›
 				cow[a] = 3;
 				a = 0;
 				i++;
 			}
-			//²»Îª0µÄÅ£
+			//ä¸ä¸º0çš„ç‰›
 			else
 			{
 				cow[i] = cow[i] - 1;
 				i++;
 			}
 		}
-		//i¹éÁã£¬ÏÂÒ»ÂÖ£¨Äê£©
+		//iå½’é›¶ï¼Œä¸‹ä¸€è½®ï¼ˆå¹´ï¼‰
 		i = 0;
 	}
 
-	//Ñ°ÕÒÊý×éÄ©Î²²¢Êä³ö£¬¼´ÎªÅ£µÄÊýÁ¿
+	//å¯»æ‰¾æ•°ç»„æœ«å°¾å¹¶è¾“å‡ºï¼Œå³ä¸ºç‰›çš„æ•°é‡
 	a = 0;
 	while (cow[a] != 9)
 	{
@@ -100,7 +100,7 @@ int getnum()
 
 
 
-//from 2022 MOS¸´ÊÔÊÔÌâ 1
+//from 2022 MOSå¤è¯•è¯•é¢˜ 1
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
@@ -152,12 +152,12 @@ int calest(int w)
     {
     default:
         break;
-    case -1: printf("»¹ÓÐ 6Ìì²ÅÊÇÐÇÆÚËÄ"); break;
-    case -2: printf("»¹ÓÐ 5Ìì²ÅÊÇÐÇÆÚËÄ"); break;
-    case -3: printf("»¹ÓÐ 4Ìì²ÅÊÇÐÇÆÚËÄ"); break;
-    case 3: printf("»¹ÓÐ 3Ìì²ÅÊÇÐÇÆÚËÄ"); break;
-    case 2: printf("»¹ÓÐ 2Ìì²ÅÊÇÐÇÆÚËÄ"); break;
-    case 1: printf("»¹ÓÐ 1Ìì²ÅÊÇÐÇÆÚËÄ"); break;
+    case -1: printf("è¿˜æœ‰ 6å¤©æ‰æ˜¯æ˜ŸæœŸå››"); break;
+    case -2: printf("è¿˜æœ‰ 5å¤©æ‰æ˜¯æ˜ŸæœŸå››"); break;
+    case -3: printf("è¿˜æœ‰ 4å¤©æ‰æ˜¯æ˜ŸæœŸå››"); break;
+    case 3: printf("è¿˜æœ‰ 3å¤©æ‰æ˜¯æ˜ŸæœŸå››"); break;
+    case 2: printf("è¿˜æœ‰ 2å¤©æ‰æ˜¯æ˜ŸæœŸå››"); break;
+    case 1: printf("è¿˜æœ‰ 1å¤©æ‰æ˜¯æ˜ŸæœŸå››"); break;
     }
 }
 
