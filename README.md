@@ -1,4 +1,5 @@
 # FibreCase_C_Learning_Project
+# 该课程已结束，本仓库将归档
 
 你好，欢迎来到FibreCase的C语言代码学习仓库  
 仓库代码已经转入CLion编辑,原先由VS创建的项目在MSVS分支中    
